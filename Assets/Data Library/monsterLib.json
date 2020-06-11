@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "name": "Template Monster",
+        "types": [
+            0,
+            1
+        ],
+        "stats": {
+            "hitPoints": 10,
+            "strength": 10,
+            "armor": 10,
+            "speed": 10
+        },
+        "forms": []
+    }
+]
