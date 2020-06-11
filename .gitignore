@@ -1,4 +1,4 @@
 *.meta
 .meta
-Library/Artifacts/*
+Library/*
 Temp/*
