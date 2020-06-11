@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public interface Target
 {
-    // Start is called before the first frame update
-    void Start()
+    public void apply(BattleAction battleAction)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

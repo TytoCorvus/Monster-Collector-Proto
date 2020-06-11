@@ -19,10 +19,18 @@ public class CreatureStats
         return stats[statName];
     }
 
-    public static class Stat
+    public void setStatsToBase()
+    {
+        foreach (KeyValuePair<StatName, Stat> entry in stats)
+        {
+            entry.Value.setModifier(new StatModifier());
+        }
+    }
+
+    public class Stat
     {
         private readonly int baseVal;
-        private readonly StatModifier modifier;
+        private StatModifier modifier;
         public Stat(int baseVal)
         {
             this.baseVal = baseVal;
@@ -36,25 +44,34 @@ public class CreatureStats
 
         public int get()
         {
-            return (baseVal + modifier.getadditive()) * modifier.getmultiplicative();
+            return (int)((baseVal + modifier.getAdditive()) * modifier.getMultiplicative());
+        }
+
+        public void setModifier(StatModifier statModifier)
+        {
+            this.modifier = statModifier;
         }
     }
 
-    public static class StatModifier
+    public class StatModifier
     {
-        private int additive
-        {
-            get { return additive; }
-        }
-        private double multiplicative
-        {
-            get { return multiplicative; }
-        }
+        private int additive;
+        private double multiplicative;
 
         public StatModifier()
         {
             this.additive = 0;
             this.multiplicative = 1;
+        }
+
+        public int getAdditive()
+        {
+            return additive;
+        }
+
+        public double getMultiplicative()
+        {
+            return multiplicative;
         }
 
         public void applyAdditive(int additive)

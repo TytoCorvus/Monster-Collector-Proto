@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Battlefield : MonoBehaviour
 {
-    private Creature playerCreature;
-    private Creature enemyCreature;
+    private BattleCreature playerCreature;
+    private BattleCreature enemyCreature;
 
-
-    public void takeTurn(List<Move> turns){
+    public void takeTurn(List<Move> turns)
+    {
 
     }
 
-    public List<Creature> getTurnOrder(){
-        
+    public List<Creature> getTurnOrder()
+    {
+        return null;
     }
 }
