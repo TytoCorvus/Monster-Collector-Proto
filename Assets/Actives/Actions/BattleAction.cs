@@ -5,15 +5,24 @@ using UnityEngine;
 public class BattleAction
 {
     private readonly TargetClass targetClass;
+    private readonly string message;
 
-    public BattleAction(TargetClass targetClass)
+    public BattleAction(TargetClass targetClass, string message)
     {
         this.targetClass = targetClass;
+        this.message = message;
     }
 
-    public virtual void execute(BattleActionSource source, List<Target> targets)
-    {
+    public virtual void execute(BattleActionContext actionContext) { }
 
+    public virtual bool canExecute(BattleActionContext actionContext)
+    {
+        return true;
+    }
+
+    public virtual bool hasMessage()
+    {
+        return message == null ? false : true;
     }
 
 }

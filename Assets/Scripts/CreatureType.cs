@@ -5,7 +5,7 @@ using UnityEngine;
 public class CreatureType
 {
 
-    private readonly int id;
+    public readonly int id;
 
     private readonly string name;
 

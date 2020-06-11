@@ -5,18 +5,20 @@ using UnityEngine;
 public class Move
 {
     public readonly MoveClass moveClass;
-    public readonly TargetClass targetClass;
-
     public readonly List<BattleAction> moveActions;
 
-    public Move(MoveClass moveClass, TargetClass targetClass, List<BattleAction> moveActions)
+    public Move(MoveClass moveClass, List<BattleAction> moveActions)
     {
         this.moveClass = moveClass;
-        this.targetClass = targetClass;
         this.moveActions = moveActions;
     }
 
-    public void execute(Target target)
+    public bool canExecute()
+    {
+
+    }
+
+    public void execute()
     {
 
     }

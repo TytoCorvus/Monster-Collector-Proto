@@ -16,10 +16,8 @@ public class Damage : BattleAction
         this.source = source;
     }
 
-    public override void execute(BattleActionSource source, List<Target> targets)
+    public override void execute(BattleActionContext actionContext)
     {
 
     }
-
-
 }

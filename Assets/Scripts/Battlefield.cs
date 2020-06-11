@@ -12,8 +12,13 @@ public class Battlefield : MonoBehaviour
 
     }
 
-    public List<Creature> getTurnOrder()
+    public List<BattleCreature> getTurnOrder()
     {
         return null;
+    }
+
+    public List<Pair<BattleAction, BattleActionContext>> getActionContext(Move move, BattleCreature source)
+    {
+        return new List<Pair<BattleAction, BattleActionContext>>();
     }
 }
