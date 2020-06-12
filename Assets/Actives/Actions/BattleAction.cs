@@ -7,6 +7,12 @@ public class BattleAction
     private readonly TargetClass targetClass;
     private readonly string message;
 
+    public BattleAction(TargetClass targetClass)
+    {
+        this.targetClass = targetClass;
+        this.message = null;
+    }
+
     public BattleAction(TargetClass targetClass, string message)
     {
         this.targetClass = targetClass;

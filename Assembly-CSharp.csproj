@@ -51,7 +51,10 @@
      <Compile Include="Assets\Scripts\Creature.cs" />
      <Compile Include="Assets\Scripts\CreatureStats.cs" />
      <Compile Include="Assets\Scripts\CreatureType.cs" />
+     <Compile Include="Assets\Scripts\DamageUtils.cs" />
      <Compile Include="Assets\Scripts\Effect.cs" />
+     <Compile Include="Assets\Scripts\Focus.cs" />
+     <Compile Include="Assets\Scripts\Owner.cs" />
      <Compile Include="Assets\Scripts\Pair.cs" />
      <Compile Include="Assets\Scripts\TargetClass.cs" />
      <None Include="Assets\JSON\readme.txt" />

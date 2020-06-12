@@ -5,9 +5,8 @@ using UnityEngine;
 public class BattleActionsSharingContext : BattleAction
 {
     private List<BattleAction> battleActions;
-    public BattleActionsSharingContext(TargetClass targetClass, List<BattleAction> battleActions)
+    public BattleActionsSharingContext(TargetClass targetClass, List<BattleAction> battleActions) : base(targetClass)
     {
-        base(targetClass);
         this.battleActions = battleActions;
     }
 
@@ -15,16 +14,16 @@ public class BattleActionsSharingContext : BattleAction
     {
         foreach (BattleAction ba in battleActions)
         {
-            ba.execute(actionContext);
+            ba.execute(battleActionContext);
         }
     }
 
-    public override bool canExecute(BattleActionContext actionContext)
+    public override bool canExecute(BattleActionContext battleActionContext)
     {
-        boolean canExecute = true;
+        bool canExecute = true;
         foreach (BattleAction ba in battleActions)
         {
-            canExecute = canExecute && ba.canExecute(actionContext);
+            canExecute = canExecute && ba.canExecute(battleActionContext);
         }
         return canExecute;
     }

@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Damage : BattleAction
 {
+
     private readonly int basePower;
     private readonly CreatureType damageType;
-    private readonly Creature source;
 
-    public Damage(TargetClass targetClass, int basePower, CreatureType damageType)
+    public Damage(TargetClass targetClass, int basePower, CreatureType damageType) : base(targetClass)
     {
-        base(targetClass);
         this.basePower = basePower;
         this.damageType = damageType;
-        this.source = source;
     }
 
     public override void execute(BattleActionContext actionContext)
     {
+        foreach (BattleCreature target in actionContext.targets)
+        {
+            double typeMultiplier = damageType.getDamageMultiplierVs(target.creature.creatureTypes);
 
+            target.changeHealth(DamageUtils.calculateDamage(basePower * typeMultiplier,
+                                                            actionContext.source.creature.getStats(),
+                                                            target.creature.getStats()));
+        }
     }
 }
