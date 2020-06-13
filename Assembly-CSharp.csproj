@@ -40,9 +40,12 @@
      <Compile Include="Assets\Actives\Actions\BattleAction.cs" />
      <Compile Include="Assets\Actives\Actions\BattleActionContext.cs" />
      <Compile Include="Assets\Actives\Actions\BattleActionsSharingContext.cs" />
+     <Compile Include="Assets\Actives\Actions\BuffBattleAction.cs" />
      <Compile Include="Assets\Actives\Actions\Damage.cs" />
+     <Compile Include="Assets\Actives\Actions\StatusBattleAction.cs" />
      <Compile Include="Assets\Actives\Moves\Move.cs" />
      <Compile Include="Assets\Data Access\JsonReader.cs" />
+     <Compile Include="Assets\Data Access\LibraryLoader.cs" />
      <Compile Include="Assets\JSON\JSONObject.cs" />
      <Compile Include="Assets\JSON\JSONTemplates.cs" />
      <Compile Include="Assets\JSON\VectorTemplates.cs" />
@@ -56,6 +59,7 @@
      <Compile Include="Assets\Scripts\Focus.cs" />
      <Compile Include="Assets\Scripts\Owner.cs" />
      <Compile Include="Assets\Scripts\Pair.cs" />
+     <Compile Include="Assets\Scripts\RandomUtils.cs" />
      <Compile Include="Assets\Scripts\TargetClass.cs" />
      <None Include="Assets\JSON\readme.txt" />
     <Reference Include="UnityEngine">

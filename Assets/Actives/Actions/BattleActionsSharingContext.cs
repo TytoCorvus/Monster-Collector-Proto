@@ -10,12 +10,13 @@ public class BattleActionsSharingContext : BattleAction
         this.battleActions = battleActions;
     }
 
-    public override void execute(BattleActionContext battleActionContext)
+    public override int execute(BattleActionContext battleActionContext)
     {
         foreach (BattleAction ba in battleActions)
         {
-            ba.execute(battleActionContext);
+            if (ba.execute(battleActionContext) != 0) { return 1; }
         }
+        return 0;
     }
 
     public override bool canExecute(BattleActionContext battleActionContext)

@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class BattleActionContext
 {
-    public readonly BattleCreature source;
-    public readonly List<BattleCreature> targets;
-    public readonly double damageAmp;
-    public readonly bool sameTypeBonus;
-    public BattleActionContext(BattleCreature source, List<BattleCreature> targets, double damageAmp, bool sameTypeBonus)
+    public BattleCreature source;
+    public List<BattleCreature> targets;
+    public double damageAmp;
+    public bool sameTypeBonus;
+    public double alteredChanceToHit;
+    public double alteredChanceForSecondary;
+    public BattleActionContext(BattleCreature source, List<BattleCreature> targets, double damageAmp, bool sameTypeBonus,
+                                double alteredChanceToHit, double alteredChanceForSecondary)
     {
         this.source = source;
         this.targets = targets;
         this.damageAmp = damageAmp;
         this.sameTypeBonus = sameTypeBonus;
+        this.alteredChanceToHit = alteredChanceToHit;
+        this.alteredChanceForSecondary = alteredChanceForSecondary;
     }
 
     public bool hasTargets()

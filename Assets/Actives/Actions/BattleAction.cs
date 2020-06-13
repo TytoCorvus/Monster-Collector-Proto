@@ -19,7 +19,11 @@ public class BattleAction
         this.message = message;
     }
 
-    public virtual void execute(BattleActionContext actionContext) { }
+    //
+    public virtual int execute(BattleActionContext actionContext)
+    {
+        return 0;
+    }
 
     public virtual bool canExecute(BattleActionContext actionContext)
     {
