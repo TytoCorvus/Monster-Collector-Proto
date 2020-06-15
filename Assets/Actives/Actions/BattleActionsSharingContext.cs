@@ -28,4 +28,10 @@ public class BattleActionsSharingContext : BattleAction
         }
         return canExecute;
     }
+
+    public static BattleAction fromJSONObject(JSONObject json)
+    {
+        //TODO properly implement
+        return null;
+    }
 }

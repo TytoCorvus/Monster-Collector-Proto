@@ -34,5 +34,4 @@ public class BattleAction
     {
         return message == null ? false : true;
     }
-
 }

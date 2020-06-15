@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class StatusBattleAction : BattleAction
 {
+    private readonly StatusType statusType;
+    private readonly int statusValue;
+    private readonly CreatureType creatureType;
+    private readonly double chanceToHit;
 
     public StatusBattleAction(TargetClass targetClass, StatusType statusType, int statusValue, CreatureType creatureType, double chanceToHit) : base(targetClass)
     {
-        this.basePower = basePower;
-        this.damageType = damageType;
+        this.statusType = statusType;
+        this.statusValue = statusValue;
+        this.creatureType = creatureType;
         this.chanceToHit = chanceToHit;
     }
 
@@ -16,6 +21,11 @@ public class StatusBattleAction : BattleAction
     {
         //TODO properly implement status conditions
         return 0;
+    }
+
+    public static BattleAction fromJSONObject(JSONObject json)
+    {
+        return null;
     }
 
     //TODO create status application details

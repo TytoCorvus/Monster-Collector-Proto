@@ -36,4 +36,19 @@ public class Damage : BattleAction
         }
         return targetsHit ? 0 : 1;
     }
+
+    public static BattleAction fromJSONObject(JSONObject json)
+    {
+        JSONObject inputArr = json.GetField("inputs");
+        List<JSONObject> inputList = inputArr.list;
+        int targetClassInt = (int)inputList[0].n;
+        int basePower = (int)inputList[1].n;
+        int damageTypeId = (int)inputList[2].n;
+        double chanceToHit = (double)inputList[3].n;
+
+        TargetClass targetClass = (TargetClass)targetClassInt;
+        CreatureType creatureType = CreatureTypeLibrary.creatureTypes[(CreatureTypeLibrary.CreatureTypeName)damageTypeId];
+
+        return new Damage(targetClass, basePower, creatureType, chanceToHit);
+    }
 }

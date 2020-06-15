@@ -10,6 +10,8 @@ public class Move
     private readonly int focusChange;
     private readonly int healthChange;
 
+    private int remainingUses;
+
     public Move(MoveClass moveClass, List<BattleAction> moveActions, int focusChange, int healthChange)
     {
         this.moveClass = moveClass;
@@ -22,7 +24,9 @@ public class Move
     {
         BattleCreature source = context.source;
         //TODO Update logic to require targets from all reqired BattleActions based on the context or list of contexts
-        return !(source.isKnockedOut()) && source.focus.getCurrentFocus() >= focusChange && source.currentHP >= healthChange;
+        return !(source.isKnockedOut()) &&
+               source.focus.getCurrentFocus() >= focusChange &&
+               source.currentHP >= healthChange;
     }
 
     public void applyCosts(BattleCreature source)

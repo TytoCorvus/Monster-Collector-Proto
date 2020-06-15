@@ -88,8 +88,9 @@ public class CreatureStats
     public enum StatName
     {
         HP = 0,
-        STR = 1,
-        ARM = 2,
-        SPD = 3
+        FOCUS = 1,
+        STR = 2,
+        ARM = 3,
+        SPD = 4
     }
 }
