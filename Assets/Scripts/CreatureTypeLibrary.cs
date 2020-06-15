@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CreatureTypeLibrary
 {
-    public static Dictionary<CreatureTypeName, CreatureType> creatureTypes;
+    public static Dictionary<CreatureTypeName, CreatureType> creatureTypes = new Dictionary<CreatureTypeName, CreatureType>();
 
-    static void Initialize()
+    static CreatureTypeLibrary()
     {
         List<int> empty = new List<int>();
         creatureTypes.Add(CreatureTypeName.VITAL, new CreatureType(0, "Vital", "7e8f7c", empty, empty, empty));

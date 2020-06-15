@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleActionLoader
 {
-    public static List<BattleAction> battleActionLibraryFromJson(JSONObject arrayAsJson)
+    public static List<BattleAction> battleActionListFromJson(JSONObject arrayAsJson)
     {
         if (arrayAsJson.type != JSONObject.Type.ARRAY)
         {
@@ -18,7 +18,7 @@ public class BattleActionLoader
             int id;
             string name;
             BattleAction result = null;
-            j.GetField(out id, "id", -1);
+            j.GetField(out id, "actionId", -1);
             j.GetField(out name, "name", "");
             switch ((BATTLE_ACTION_MAPPING)id)
             {

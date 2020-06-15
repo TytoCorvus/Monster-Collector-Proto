@@ -10,26 +10,28 @@ public class LibraryLoader : MonoBehaviour
     void Start()
     {
         basePath = Application.dataPath + "/DataLibrary/";
-        beginLoad();
+        loadMoveLibrary();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void loadMoveLibrary()
     {
+        string json = readEntireFile("moveLib");
+        JSONObject moveLibraryJson = JSONObject.Create(json);
+        foreach (JSONObject j in moveLibraryJson.list)
+        {
+            Move m = Move.fromJSONObject(j);
+            MoveLibrary.loadDictionary(m.id, m.name, m);
+
+            Debug.Log(m.ToString());
+        }
+
 
     }
 
-    public void beginLoad()
+    private string readEntireFile(string filePath)
     {
-        // TextAsset targetFile = Resources.Load<TextAsset>(filePath);
-        // Debug.Log(targetFile.name);
-
-        string fileName = "battleActionLib";
-
-        Debug.Log("Attempting to open the file at location : " + basePath + fileName);
-        StreamReader streamReader = new StreamReader(basePath + fileName + ".json");
-        string json = streamReader.ReadToEnd();
-
-        List<BattleAction> battleActions = BattleActionLoader.battleActionLibraryFromJson(JSONObject.Create(json));
+        Debug.Log("Attempting to open the file at location : " + basePath + filePath);
+        StreamReader streamReader = new StreamReader(basePath + filePath + ".json");
+        return streamReader.ReadToEnd();
     }
 }

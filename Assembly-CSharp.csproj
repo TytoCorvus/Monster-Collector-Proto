@@ -44,6 +44,7 @@
      <Compile Include="Assets\Actives\Actions\Damage.cs" />
      <Compile Include="Assets\Actives\Actions\StatusBattleAction.cs" />
      <Compile Include="Assets\Actives\Moves\Move.cs" />
+     <Compile Include="Assets\Actives\Moves\MoveLibrary.cs" />
      <Compile Include="Assets\Data Access\BattleActionLoader.cs" />
      <Compile Include="Assets\Data Access\JsonReader.cs" />
      <Compile Include="Assets\Data Access\LibraryLoader.cs" />

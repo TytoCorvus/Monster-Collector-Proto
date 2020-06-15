@@ -7,15 +7,15 @@ public class CreatureType
 
     public readonly int id;
 
-    private readonly string name;
+    public readonly string name;
 
-    private readonly string color;
+    public readonly string color;
 
-    private readonly List<int> advantage;
+    public readonly List<int> advantage;
 
-    private readonly List<int> resist;
+    public readonly List<int> resist;
 
-    private readonly List<int> immune;
+    public readonly List<int> immune;
 
     public CreatureType(int id, string name, string color, List<int> adv, List<int> res, List<int> imm)
     {

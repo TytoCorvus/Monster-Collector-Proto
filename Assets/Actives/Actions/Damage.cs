@@ -37,6 +37,12 @@ public class Damage : BattleAction
         return targetsHit ? 0 : 1;
     }
 
+    public override string ToString()
+    {
+        Debug.Log("Called Damage ToString method");
+        return "Damage: " + basePower + " Type: " + damageType.name;
+    }
+
     public static BattleAction fromJSONObject(JSONObject json)
     {
         JSONObject inputArr = json.GetField("inputs");
