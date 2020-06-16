@@ -43,6 +43,8 @@
      <Compile Include="Assets\Actives\Actions\BuffBattleAction.cs" />
      <Compile Include="Assets\Actives\Actions\Damage.cs" />
      <Compile Include="Assets\Actives\Actions\StatusBattleAction.cs" />
+     <Compile Include="Assets\Actives\FocalPoints\FocalPoints.cs" />
+     <Compile Include="Assets\Actives\FocalPoints\FocusPoint.cs" />
      <Compile Include="Assets\Actives\Moves\Move.cs" />
      <Compile Include="Assets\Actives\Moves\MoveLibrary.cs" />
      <Compile Include="Assets\Data Access\BattleActionLoader.cs" />

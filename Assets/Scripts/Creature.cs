@@ -6,6 +6,7 @@ public class Creature
 {
     public readonly CreatureStats stats;
     public List<Move> moveset;
+    public FocalPoints focalPoints;
     public List<CreatureType> creatureTypes { get => creatureTypes; set => creatureTypes = value; }
 
     public Creature(CreatureStats stats, List<CreatureType> creatureTypes)

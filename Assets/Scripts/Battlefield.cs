@@ -9,9 +9,29 @@ public class Battlefield : MonoBehaviour
     public List<BattleCreature> playerCreatures;
     private List<BattleCreature> enemyCreatures;
 
-    public void takeTurn(List<Move> turns)
+    public List<Pair<BattleCreature, Move>> getMoveRequests()
     {
+        //TODO make more intelligent move requesting for enemies
+        List<Pair<BattleCreature, Move>> moveRequests = new List<Pair<BattleCreature, Move>>();
+        foreach (BattleCreature bc in enemyCreatures)
+        {
+            moveRequests.Add(new Pair<BattleCreature, Move>(bc, selectRandomMove(bc)));
+        }
 
+        moveRequests.AddRange(getPlayerCreatureMoveRequests());
+
+        return moveRequests;
+    }
+
+    private List<Pair<BattleCreature, Move>> getPlayerCreatureMoveRequests()
+    {
+        List<Pair<BattleCreature, Move>> moveReqs = new List<Pair<BattleCreature, Move>>();
+    }
+
+    private Move selectRandomMove(BattleCreature bc)
+    {
+        int pos = (int)Mathf.Floor(RandomUtils.nextInRange(0, bc.creature.moveset.Count - 1));
+        return bc.creature.moveset[pos];
     }
 
     public List<BattleCreature> getTurnOrder()
@@ -23,10 +43,53 @@ public class Battlefield : MonoBehaviour
         return order;
     }
 
-    public List<Pair<BattleAction, BattleActionContext>> getActionContext(Move move, BattleCreature source)
+    private List<Pair<BattleAction, BattleActionContext>> getActionContexts(Move move, BattleCreature source)
     {
+        List<Pair<BattleAction, BattleActionContext>> result = new List<Pair<BattleAction, BattleActionContext>>();
 
-        return new List<Pair<BattleAction, BattleActionContext>>();
+        List<BattleCreature> otherCreatures = source.owner == Owner.PLAYER || source.owner == Owner.ALLY ? enemyCreatures : playerCreatures;
+        List<BattleCreature> friendlyCreatures = source.owner == Owner.PLAYER_ENEMY || source.owner == Owner.COMPUTER ? playerCreatures : enemyCreatures;
+
+        foreach (BattleAction ba in move.battleActions)
+        {
+
+            List<BattleCreature> targets = new List<BattleCreature>();
+
+            switch (ba.targetClass)
+            {
+                case TargetClass.SELF:
+                    targets.Add(source);
+                    break;
+                case TargetClass.ENEMY_ALL:
+                    targets.AddRange(otherCreatures);
+                    break;
+                case TargetClass.ENEMY_SINGLE:
+                    //TODO allow the game to prompt the player for which enemy
+                    targets.Add(otherCreatures[0]);
+                    break;
+                case TargetClass.ALLY:
+                    //TODO allow the game to prmpt the player for which enemy
+                    targets.Add(friendlyCreatures[0]);
+                    break;
+                case TargetClass.ALLY_ALL:
+                    targets.AddRange(friendlyCreatures);
+                    break;
+                case TargetClass.ALL:
+                    targets.AddRange(otherCreatures);
+                    targets.AddRange(friendlyCreatures);
+                    break;
+            }
+
+            result.Add(new Pair<BattleAction, BattleActionContext>(ba, buildContextForCreature(source, targets)));
+        }
+
+        return result;
+    }
+
+    private BattleActionContext buildContextForCreature(BattleCreature source, List<BattleCreature> targets)
+    {
+        //TODO alter the specific context for things like focus or creature buffs
+        return new BattleActionContext(source, targets, 1, false, 1, 1);
     }
 
     public bool isBattleOver()

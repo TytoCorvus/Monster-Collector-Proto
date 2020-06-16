@@ -31,10 +31,11 @@ public class Focus
 
     public void updateCurrentThreshold()
     {
-        FocusThreshold result = FocusThreshold.FULL;
+        FocusThreshold result = FocusThreshold.SHARP;
         if (currentFocus <= 0) { result = FocusThreshold.EMPTY; }
-        else if (currentFocus > 0 && currentFocus < 50) { result = FocusThreshold.UNFOCUSED; }
-        else if (currentFocus >= 50 && currentFocus < 100) { result = FocusThreshold.IN_TUNE; }
+        else if (currentFocus > 0 && currentFocus < 50) { result = FocusThreshold.HAZY; }
+        else if (currentFocus >= 50 && currentFocus < 80) { result = FocusThreshold.ALERT; }
+        else if (currentFocus >= 80 && currentFocus < 100) { result = FocusThreshold.IN_TUNE; }
         currentThreshold = result;
     }
 
@@ -50,8 +51,9 @@ public class Focus
     public enum FocusThreshold
     {
         EMPTY,
-        UNFOCUSED,
+        HAZY,
+        ALERT,
         IN_TUNE,
-        FULL
+        SHARP
     }
 }

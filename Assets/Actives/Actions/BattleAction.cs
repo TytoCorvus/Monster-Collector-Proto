@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BattleAction
 {
-    private readonly TargetClass targetClass;
-    private readonly string message;
+    public readonly TargetClass targetClass;
+    public readonly string message;
 
     public BattleAction(TargetClass targetClass)
     {
