@@ -6,7 +6,8 @@ public class BattleCreature : MonoBehaviour
 {
     public Creature creature;
     public Owner owner;
-    public Focus focus = new Focus(30);
+    public readonly Focus focus = new Focus(30);
+    public readonly List<Status> status = new List<>();
     private bool knockedOut = false;
 
     private int maxHP { get => maxHP; set => maxHP = value; }
@@ -50,5 +51,10 @@ public class BattleCreature : MonoBehaviour
     public bool isKnockedOut()
     {
         return knockedOut;
+    }
+
+    public CreatureStats getCurrentStats()
+    {
+
     }
 }

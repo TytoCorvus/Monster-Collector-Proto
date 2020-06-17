@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\DamageUtils.cs" />
      <Compile Include="Assets\Scripts\Effect.cs" />
      <Compile Include="Assets\Scripts\Focus.cs" />
+     <Compile Include="Assets\Scripts\FocusThreshold.cs" />
      <Compile Include="Assets\Scripts\Owner.cs" />
      <Compile Include="Assets\Scripts\Pair.cs" />
      <Compile Include="Assets\Scripts\RandomUtils.cs" />

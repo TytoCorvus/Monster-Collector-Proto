@@ -47,13 +47,4 @@ public class Focus
         if (finalVal > ceiling) { finalVal = ceiling; }
         return finalVal;
     }
-
-    public enum FocusThreshold
-    {
-        EMPTY,
-        HAZY,
-        ALERT,
-        IN_TUNE,
-        SHARP
-    }
 }

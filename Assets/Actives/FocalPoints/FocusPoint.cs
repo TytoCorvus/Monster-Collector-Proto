@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FocusPoint
 {
+    private bool active;
     private BattleAction apply;
     private BattleAction remove;
 
@@ -15,11 +16,13 @@ public class FocusPoint
 
     public void apply(double multiplier)
     {
+        active = true;
 
     }
 
     public void remove(double multiplier)
     {
+        active = false;
 
     }
 }
