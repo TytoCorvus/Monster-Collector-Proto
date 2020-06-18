@@ -10,6 +10,8 @@ public class BuffBattleAction : BattleAction
     private CreatureTypeLibrary.CreatureTypeName creatureType;
     private double chanceToHit;
 
+
+
     public BuffBattleAction(TargetClass targetClass, List<CreatureStats.StatName> statsArray, double buffValue,
                             bool isAdditive, CreatureTypeLibrary.CreatureTypeName creatureType, double chanceToHit) : base(targetClass)
     {
@@ -23,7 +25,7 @@ public class BuffBattleAction : BattleAction
 
     public override int execute(BattleActionContext actionContext)
     {
-        //TODO properly implement status conditions
+        //TODO properly 
         return 0;
     }
 

@@ -23,7 +23,7 @@ public class BattleActionLoader
             switch ((BATTLE_ACTION_MAPPING)id)
             {
                 case BATTLE_ACTION_MAPPING.DAMAGE:
-                    result = Damage.fromJSONObject(j);
+                    result = DamageBattleAction.fromJSONObject(j);
                     break;
                 case BATTLE_ACTION_MAPPING.STATUS:
                     result = StatusBattleAction.fromJSONObject(j);
