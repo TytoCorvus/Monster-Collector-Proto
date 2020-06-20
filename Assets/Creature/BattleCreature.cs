@@ -5,12 +5,14 @@ using UnityEngine;
 public class BattleCreature : MonoBehaviour
 {
     //TODO make a UI for BattleCreatures
-    //public BattleCreatureUI ui;
+    private BattleCreatureHUD hud;
     public Creature creature;
     public Owner owner;
-    public readonly Focus focus = new Focus(30);
-    public readonly List<Status> status = new List<>();
+    public readonly Focus focus = new Focus();
+    public readonly List<Status> status = new List<Status>();
     private bool knockedOut = false;
+
+
 
     private int maxHP { get => maxHP; set => maxHP = value; }
 
@@ -24,7 +26,7 @@ public class BattleCreature : MonoBehaviour
     {
         this.creature = creature;
         this.owner = owner;
-        maxHP = creature.getStats().getStat(CreatureStats.StatName.HP).get();
+        maxHP = creature.getStats().getStat(StatName.HP).get();
         currentHP = maxHP;
     }
 
@@ -41,7 +43,7 @@ public class BattleCreature : MonoBehaviour
     public void changeHealth(int amount)
     {
         int newAmount = currentHP + amount;
-        int maxHP = creature.getStats().getStat(CreatureStats.StatName.HP).get();
+        int maxHP = creature.getStats().getStat(StatName.HP).get();
         currentHP = bound(newAmount, 0, maxHP);
         if (currentHP == 0) knockedOut = true;
     }
@@ -60,8 +62,14 @@ public class BattleCreature : MonoBehaviour
         return knockedOut;
     }
 
+    public List<CreatureType> getCreatureTypes()
+    {
+        return creature.getCreatureTypes();
+    }
+
     public CreatureStats getCurrentStats()
     {
-
+        //TODO implement
+        return null;
     }
 }

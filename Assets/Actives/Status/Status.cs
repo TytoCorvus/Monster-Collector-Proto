@@ -1,5 +1,5 @@
 
-public class Status
+public abstract class Status
 {
     public readonly bool hasBuffIcon;
     public readonly bool altersStats;

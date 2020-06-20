@@ -1,7 +1,10 @@
+using System.Runtime.Remoting.Messaging;
+using UnityEngine.UIElements.Experimental;
+
 public class Stat
 {
     private readonly int baseVal;
-    private StatModifier modifier;
+    public StatModifier modifier { get => modifier; set => modifier = value; }
     public Stat(int baseVal)
     {
         this.baseVal = baseVal;
@@ -21,5 +24,10 @@ public class Stat
     public void setModifier(StatModifier statModifier)
     {
         this.modifier = statModifier;
+    }
+
+    public int applyModifier(StatModifier statModifier)
+    {
+
     }
 }

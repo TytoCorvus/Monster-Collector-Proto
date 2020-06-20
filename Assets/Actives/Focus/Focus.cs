@@ -24,21 +24,28 @@ public class Focus
     public int getCurrentFocus() { return currentFocus; }
     public List<BattleAction> alterCurrentFocus(int value, BattleCreature owner)
     {
-        List<Pair<FocusPoint, double>> previouslyActive = FocalPoints.getCurrentThreshold();
+        List<Pair<FocusPoint, double>> previouslyActive = focalPoints.getActiveFocusPoints(currentThreshold);
 
         currentFocus += value;
         currentFocus = bound_int(currentFocus, 0, MAX_FOCUS);
         updateCurrentThreshold();
 
-        List<Pair<FocusPoint, double>> newlyActive = FocalPoints.getCurrentThreshold();
+        List<Pair<FocusPoint, double>> newlyActive = focalPoints.getActiveFocusPoints(currentThreshold);
 
-        if (previouslyActive.Count == newlyActive.Count) { return; }
+        if (previouslyActive.Count == newlyActive.Count) { return null; }
         else if (previouslyActive.Count > newlyActive.Count)
         {
             //Deactivate all of the FocusPoints that are no longer active
             //TODO make this not dependent on the order returned from FocalPoints
 
+        } else
+        {
+            //Activate all of the FocusPoints that are newly active
+            //TODO make this not dependent on the order returned from FocalPoints
         }
+
+        //TODO make this return actual BattleActions to occur (Not required for stat-boosting focus effects)
+        return new List<BattleAction>();
     }
 
     public FocusThreshold getCurrentThreshold() { return currentThreshold; }
@@ -60,5 +67,10 @@ public class Focus
         if (newVal < floor) { finalVal = floor; }
         if (finalVal > ceiling) { finalVal = ceiling; }
         return finalVal;
+    }
+
+    public List<Pair<StatName, StatModifier>> getCurrentStatChanges()
+    {
+        return focalPoints.getFocusStatChanges(currentThreshold);
     }
 }

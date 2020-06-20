@@ -1,41 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class FocusPoint
 {
-    private bool active;
-    private readonly double multiplier;
-    private readonly FocusPointType trigger;
+    private readonly FocusTrigger focusTrigger;
+    private readonly BattleAction battleAction;
+    private readonly List<Pair<StatName, StatModifier>> statModifiers;
     private readonly string description;
-    public FocusPoint(FocusPointType trigger)
+    public FocusPoint(FocusTrigger focusTrigger, BattleAction battleAction, List<Pair<StatName, StatModifier>> statModifiers, string description)
     {
-        this.trigger = trigger;
+        this.focusTrigger = focusTrigger;
         this.battleAction = battleAction;
+        this.statModifiers = statModifiers;
+        this.description = description;
     }
 
-
-    public virtual bool isStatMod()
+    public bool hasActive()
     {
-
+        return focusTrigger != null && battleAction != null;
     }
 
-    public virtual bool isTrigger()
+    public bool hasStatModifier()
     {
-
+        return statModifiers != null && statModifiers.Count != 0;
     }
 
-    public virtual void apply(double multiplier)
+    public List<Pair<StatName, StatModifier>> getStatModifiers()
     {
-        active = true;
-        multiplier = multiplier;
+        return statModifiers;
     }
 
-    public virtual void remove()
+    public override string ToString()
     {
-        active = false;
-
+        return description;
     }
-
-
 }

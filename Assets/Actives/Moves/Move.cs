@@ -35,7 +35,7 @@ public class Move
     public void applyCosts(BattleCreature source)
     {
         source.changeHealth(healthChange);
-        source.focus.alterCurrentFocus(focusChange);
+        source.focus.alterCurrentFocus(focusChange, null);
     }
 
     public string ToString()
@@ -62,8 +62,6 @@ public class Move
         json.GetField(out focusChange, "focusChange", int.MinValue);
         json.GetField(out healthChange, "healthChange", int.MinValue);
         battleActions = BattleActionLoader.battleActionListFromJson(json.GetField("actionList"));
-
-        Debug.Log(battleActions.Count);
 
         return new Move(id, name, (MoveClass)moveClassId, battleActions, focusChange, healthChange);
     }

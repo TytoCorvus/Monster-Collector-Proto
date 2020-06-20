@@ -4,19 +4,41 @@ using UnityEngine;
 
 public class Creature
 {
-    public readonly CreatureStats stats;
     public List<Move> moveset;
     public FocalPoints focalPoints;
-    public List<CreatureType> creatureTypes { get => creatureTypes; set => creatureTypes = value; }
+    public Ability creatureAbility;
+    public CreatureStats baseStats;
 
-    public Creature(CreatureStats stats, List<CreatureType> creatureTypes)
+    private CreatureForm baseForm;
+    private List<CreatureForm> availableForms;
+    private CreatureForm currentForm;
+
+    public Creature(List<Move> moveset, FocalPoints focalPoints, Ability creatureAbility, CreatureStats baseStats, List<CreatureForm> availableForms)
     {
-        this.stats = stats;
-        this.creatureTypes = creatureTypes;
+        this.moveset = moveset;
+        this.focalPoints = focalPoints;
+        this.creatureAbility = creatureAbility;
+        this.baseStats = baseStats;
+        this.availableForms = availableForms;
+        this.baseForm = availableForms[0];
+        this.currentForm = availableForms[0];
+    }
+
+    public List<CreatureType> getCreatureTypes()
+    {
+        return currentForm.creatureTypes;
     }
 
     public CreatureStats getStats()
     {
-        return stats;
+        CreatureStats statSum = new CreatureStats(baseStats);
+        
+        foreach(Pair<StatName, StatModifier> statMod in currentForm.statMods)
+        {
+            statSum.getStat(statMod.getFirst()).setModifier(statMod.getSecond());
+        }
+
+        return statSum;
     }
+
 }

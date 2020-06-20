@@ -30,7 +30,6 @@ public class LibraryLoader : MonoBehaviour
 
     private string readEntireFile(string filePath)
     {
-        Debug.Log("Attempting to open the file at location : " + basePath + filePath);
         StreamReader streamReader = new StreamReader(basePath + filePath + ".json");
         return streamReader.ReadToEnd();
     }

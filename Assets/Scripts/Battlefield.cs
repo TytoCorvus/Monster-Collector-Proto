@@ -6,8 +6,10 @@ public class Battlefield : MonoBehaviour
 {
     public int playerSize = 1;
     public int enemySize = 1;
+    public BattleUIManager battleUIManager;
     public List<BattleCreature> playerCreatures;
     private List<BattleCreature> enemyCreatures;
+   
 
     public List<Pair<BattleCreature, Move>> getMoveRequests()
     {
@@ -25,7 +27,10 @@ public class Battlefield : MonoBehaviour
 
     private List<Pair<BattleCreature, Move>> getPlayerCreatureMoveRequests()
     {
+        //TODO properly implement
         List<Pair<BattleCreature, Move>> moveReqs = new List<Pair<BattleCreature, Move>>();
+
+        return moveReqs;
     }
 
     private Move selectRandomMove(BattleCreature bc)
@@ -68,7 +73,7 @@ public class Battlefield : MonoBehaviour
                     targets.Add(otherCreatures[0]);
                     break;
                 case TargetClass.ALLY:
-                    //TODO allow the game to prmpt the player for which enemy
+                    //TODO allow the game to prmpt the player for which ally
                     targets.Add(friendlyCreatures[0]);
                     break;
                 case TargetClass.ALLY_ALL:
@@ -94,6 +99,19 @@ public class Battlefield : MonoBehaviour
 
     public bool isBattleOver()
     {
-        return false;
+        bool enemyWhiteOut = true;
+        bool allyWhiteOut = true;
+
+        foreach(BattleCreature bc in enemyCreatures)
+        {
+            enemyWhiteOut &= bc.isKnockedOut();
+        }
+
+        foreach (BattleCreature bc in playerCreatures)
+        {
+            allyWhiteOut &= bc.isKnockedOut();
+        }
+
+        return enemyWhiteOut || allyWhiteOut;
     }
 }

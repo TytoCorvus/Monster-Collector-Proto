@@ -26,7 +26,7 @@ public class DamageBattleAction : BattleAction
             {
                 if (RandomUtils.checkOdds(chanceToHit * (1 + actionContext.alteredChanceToHit)))
                 {
-                    double typeMultiplier = damageType.getDamageMultiplierVs(target.creature.creatureTypes);
+                    double typeMultiplier = damageType.getDamageMultiplierVs(target.creature.getCreatureTypes());
 
                     target.changeHealth(DamageUtils.calculateDamage(basePower * typeMultiplier,
                                                                     actionContext.source.creature.getStats(),
@@ -40,7 +40,6 @@ public class DamageBattleAction : BattleAction
 
     public override string ToString()
     {
-        Debug.Log("Called Damage ToString method");
         return "Damage: " + basePower + " Type: " + damageType.name;
     }
 
@@ -56,6 +55,6 @@ public class DamageBattleAction : BattleAction
         TargetClass targetClass = (TargetClass)targetClassInt;
         CreatureType creatureType = CreatureTypeLibrary.creatureTypes[(CreatureTypeLibrary.CreatureTypeName)damageTypeId];
 
-        return new Damage(targetClass, basePower, creatureType, chanceToHit);
+        return new DamageBattleAction(targetClass, basePower, creatureType, chanceToHit);
     }
 }
