@@ -101,7 +101,6 @@
     <Compile Include="Assets\Scripts\Pair.cs" />
     <Compile Include="Assets\Scripts\RandomUtils.cs" />
     <Compile Include="Assets\Scripts\TargetClass.cs" />
-    <Compile Include="Assets\Stats\Stat.cs" />
     <Compile Include="Assets\Stats\StatModifier.cs" />
     <Compile Include="Assets\Stats\StatName.cs" />
     <None Include="Assets\JSON\readme.txt" />

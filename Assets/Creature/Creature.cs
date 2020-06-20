@@ -13,7 +13,7 @@ public class Creature
     private List<CreatureForm> availableForms;
     private CreatureForm currentForm;
 
-    public Creature(List<Move> moveset, FocalPoints focalPoints, Ability creatureAbility, CreatureStats baseStats, List<CreatureForm> availableForms)
+    public Creature(List<Move> moveset, FocalPoints focalPoints, Ability creatureAbility, CreatureStats baseStats, CreatureForm baseForm, List<CreatureForm> availableForms)
     {
         this.moveset = moveset;
         this.focalPoints = focalPoints;
@@ -31,14 +31,7 @@ public class Creature
 
     public CreatureStats getStats()
     {
-        CreatureStats statSum = new CreatureStats(baseStats);
-        
-        foreach(Pair<StatName, StatModifier> statMod in currentForm.statMods)
-        {
-            statSum.getStat(statMod.getFirst()).setModifier(statMod.getSecond());
-        }
-
-        return statSum;
+        return baseStats.getStatsWithMods(currentForm.statMods);
     }
 
 }

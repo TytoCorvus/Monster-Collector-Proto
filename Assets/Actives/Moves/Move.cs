@@ -38,7 +38,7 @@ public class Move
         source.focus.alterCurrentFocus(focusChange, null);
     }
 
-    public string ToString()
+    public override string ToString()
     {
         StringBuilder sb = new StringBuilder("Move: " + name + " BattleActions: ");
         foreach (BattleAction ba in battleActions)

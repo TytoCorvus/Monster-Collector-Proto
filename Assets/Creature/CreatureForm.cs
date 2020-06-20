@@ -31,5 +31,6 @@ public class CreatureForm
         this.revealAction = revealAction;
         this.signature = signature;
     }
+
 }
 

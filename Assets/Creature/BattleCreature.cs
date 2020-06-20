@@ -26,7 +26,7 @@ public class BattleCreature : MonoBehaviour
     {
         this.creature = creature;
         this.owner = owner;
-        maxHP = creature.getStats().getStat(StatName.HP).get();
+        maxHP = creature.getStats().getStat(StatName.HP);
         currentHP = maxHP;
     }
 
@@ -43,7 +43,7 @@ public class BattleCreature : MonoBehaviour
     public void changeHealth(int amount)
     {
         int newAmount = currentHP + amount;
-        int maxHP = creature.getStats().getStat(StatName.HP).get();
+        int maxHP = creature.getStats().getStat(StatName.HP);
         currentHP = bound(newAmount, 0, maxHP);
         if (currentHP == 0) knockedOut = true;
     }
@@ -69,7 +69,7 @@ public class BattleCreature : MonoBehaviour
 
     public CreatureStats getCurrentStats()
     {
-        //TODO implement
-        return null;
+        List<Pair<StatName, StatModifier>> focusMods = focus.getCurrentStatChanges();
+        return creature.getStats().getStatsWithMods(focusMods);
     }
 }
