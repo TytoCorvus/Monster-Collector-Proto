@@ -24,8 +24,6 @@ public class LibraryLoader : MonoBehaviour
 
             Debug.Log(m.ToString());
         }
-
-
     }
 
     private string readEntireFile(string filePath)

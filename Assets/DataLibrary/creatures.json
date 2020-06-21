@@ -1,0 +1,36 @@
+[
+    {
+        "creatureID":1,
+        "abilityId":1,
+        "baseStats":[10,10,10,10],
+        "creatureTypes":["Vital"],
+        "availableForms":[{
+            "statMods":{
+                "str":[5, 1],
+                "arm":[0, 1],
+                "spd":[0, 1]
+            },
+            "signature":null,
+            "abilityId":1,
+            "revealAction":{
+
+            }
+        }],
+        "moves":["Strike", "Slam"],
+        "focalPoints":[
+            {
+                "tier":"Hazy",
+                "statMods":{},
+                ""
+
+            },
+            {
+
+            },
+            {
+
+            }
+        ]
+    },
+    {}
+]
