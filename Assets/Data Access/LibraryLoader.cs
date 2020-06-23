@@ -9,13 +9,6 @@ public class LibraryLoader
     private static bool moveLibraryLoaded = false;
     // Start is called before the first frame update
 
-        /*
-    static LibraryLoader() {
-        basePath = Application.dataPath + "/DataLibrary/";
-        loadMoveLibrary();    
-    }
-    */
-
     public static void loadMoveLibrary()
     {
         if (!moveLibraryLoaded)

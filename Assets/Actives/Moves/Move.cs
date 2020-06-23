@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using UnityEngine;
 
@@ -7,18 +7,22 @@ public class Move
 {
     public readonly int id;
     public readonly string name;
+    public readonly string description;
     public readonly MoveClass moveClass;
     public readonly List<BattleAction> battleActions;
+    public readonly CreatureType creatureType;
 
     public readonly int focusChange;
     public readonly int healthChange;
 
-    public Move(int id, string name, MoveClass moveClass, List<BattleAction> battleActions, int focusChange, int healthChange)
+    public Move(int id, string name, string description, MoveClass moveClass, List<BattleAction> battleActions, CreatureType creatureType, int focusChange, int healthChange)
     {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.moveClass = moveClass;
         this.battleActions = battleActions;
+        this.creatureType = creatureType;
         this.focusChange = focusChange;
         this.healthChange = healthChange;
     }
@@ -52,13 +56,17 @@ public class Move
     {
         int id = (int)json.GetField("id").n;
         string name = json.GetField("name").str;
+        string description = json.GetField("description").str;
         int moveClassId = (int)json.GetField("moveClass").n;
         List<BattleAction> battleActions;
         int focusChange = (int)json.GetField("focusChange").n;
         int healthChange = (int)json.GetField("healthChange").n;
+        CreatureType creatureType = CreatureType.creatureTypesByName[json.GetField("type").str];
         battleActions = BattleActionLoader.battleActionListFromJson(json.GetField("actionList"));
 
-        return new Move(id, name, (MoveClass)moveClassId, battleActions, focusChange, healthChange);
+        UnityEngine.Debug.Log("Deserialized " + name);
+
+        return new Move(id, name, description, (MoveClass)moveClassId, battleActions, creatureType, focusChange, healthChange);
     }
 
     public enum MoveClass

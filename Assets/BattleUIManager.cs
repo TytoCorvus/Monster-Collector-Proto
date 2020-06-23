@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BattleUIManager : MonoBehaviour
 {
     public GameObject battleCreatureUIPrefab;
+    public GameObject battleMenuUIPrefab;
     public Canvas baseCanvas;
 
     private readonly RectTransform allyUIPosition;

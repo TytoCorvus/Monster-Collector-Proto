@@ -80,6 +80,7 @@
     <Compile Include="Assets\Actives\Status\Status.cs" />
     <Compile Include="Assets\BattleCreatureHUD.cs" />
     <Compile Include="Assets\BattleCreatureSprite.cs" />
+    <Compile Include="Assets\BattleMenuUI.cs" />
     <Compile Include="Assets\BattleUIManager.cs" />
     <Compile Include="Assets\Creature\BattleCreature.cs" />
     <Compile Include="Assets\Creature\Creature.cs" />

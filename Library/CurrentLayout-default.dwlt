@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 92
-    y: 247
+    x: 72
+    y: 92
     width: 1472
     height: 672
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 97
+  controlID: 57
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1161
+    x: 1160
     y: 0
-    width: 311
+    width: 312
     height: 622
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -92,8 +92,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 220
-    height: 351
+    width: 201
+    height: 350
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 351
-    width: 1161
-    height: 271
+    y: 350
+    width: 1160
+    height: 272
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 14}
@@ -128,7 +128,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 1472
     height: 672
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -215,12 +215,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1161
+    width: 1160
     height: 622
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 98
+  controlID: 101
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -240,12 +240,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1161
-    height: 351
+    width: 1160
+    height: 350
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 99
+  controlID: 102
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 220
+    x: 201
     y: 0
-    width: 941
-    height: 351
+    width: 959
+    height: 350
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
@@ -295,21 +295,21 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 674
-    width: 1513
-    height: 325
+    y: 749
+    width: 1512
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
-    ID: 236
-    splitterInitialOffset: 0
+    ID: 524
+    splitterInitialOffset: 167
     currentActiveSplitter: -1
-    realSizes: bf00000040000000
+    realSizes: 3c00000078000000
     relativeSizes:
-    - 0.75
-    - 0.25
+    - 0.3321918
+    - 0.6678082
     minSizes: 2000000020000000
     maxSizes: 0000000000000000
-    lastTotalSize: 255
+    lastTotalSize: 180
     splitSize: 6
     xOffset: 0
   m_TestTypeToolbarIndex: 1
@@ -372,7 +372,7 @@ MonoBehaviour:
       name: Monster Collector Prototype
       fullName: Monster Collector Prototype
       resultStatus: 1
-      duration: 0.1092875
+      duration: 0.1748857
       messages: 
       output: 
       stacktrace: 
@@ -388,7 +388,7 @@ MonoBehaviour:
       name: TestS.dll
       fullName: Z:/Projects/Monster-Collector-Proto/Library/ScriptAssemblies/TestS.dll
       resultStatus: 1
-      duration: 0.0533355
+      duration: 0.1254426
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +404,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 0.0436431
+      duration: 0.1172168
       messages: 
       output: 
       stacktrace: 
@@ -420,7 +420,7 @@ MonoBehaviour:
       name: CreatureStatTest
       fullName: Tests.CreatureStatTest
       resultStatus: 1
-      duration: 0.0387231
+      duration: 0.0427929
       messages: 
       output: 
       stacktrace: 
@@ -436,7 +436,7 @@ MonoBehaviour:
       name: testAddStatModSimple
       fullName: Tests.CreatureStatTest.testAddStatModSimple
       resultStatus: 1
-      duration: 0.0126559
+      duration: 0.0136942
       messages: 
       output: 
       stacktrace: 
@@ -453,7 +453,7 @@ MonoBehaviour:
       name: testBasicStatMod
       fullName: Tests.CreatureStatTest.testBasicStatMod
       resultStatus: 1
-      duration: 0.0005696
+      duration: 0.0005537
       messages: 
       output: 
       stacktrace: 
@@ -470,7 +470,7 @@ MonoBehaviour:
       name: testGetCreatureStatsWithMods
       fullName: Tests.CreatureStatTest.testGetCreatureStatsWithMods
       resultStatus: 1
-      duration: 0.0010919
+      duration: 0.0012376
       messages: 
       output: 
       stacktrace: 
@@ -482,16 +482,133 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: TestS.dll/Tests/[TestS][Tests.CreatureStatTest][suite]
-    m_ResultText: 
-    m_ResultStacktrace: 'at Tests.CreatureStatTest.testGetCreatureStatsWithMods ()
-      [0x000dd] in Z:\Projects\Monster-Collector-Proto\Assets\TestS\CreatureStatTest.cs:52
+    - id: 1005
+      uniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+      name: JSONDeserializationTest
+      fullName: Tests.JSONDeserializationTest
+      resultStatus: 1
+      duration: 0.0657889
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1009
+      parentUniqueId: TestS.dll/[TestS][Tests][suite]
+    - id: 1010
+      uniqueId: TestS.dll/Tests/JSONDeserializationTest/[TestS][Tests.JSONDeserializationTest.testCreatureDeserialization]
+      name: testCreatureDeserialization
+      fullName: Tests.JSONDeserializationTest.testCreatureDeserialization
+      resultStatus: 1
+      duration: 0.0230286
+      messages: 
+      output: 'Alt form mod: Pair<STR,Additive: 5 Multiplicative: 1>
+
+        Alt
+        form mod: Pair<ARM,Additive: 0 Multiplicative: 1>
+
+        Alt form mod:
+        Pair<SPD,Additive: 0 Multiplicative: 1>
 
 '
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+    - id: 1008
+      uniqueId: TestS.dll/Tests/JSONDeserializationTest/[TestS][Tests.JSONDeserializationTest.testCreatureFormDeserialization]
+      name: testCreatureFormDeserialization
+      fullName: Tests.JSONDeserializationTest.testCreatureFormDeserialization
+      resultStatus: 1
+      duration: 0.0009323
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+    - id: 1008
+      uniqueId: TestS.dll/Tests/JSONDeserializationTest/[TestS][Tests.JSONDeserializationTest.testCreatureStatsDeserialization]
+      name: testCreatureStatsDeserialization
+      fullName: Tests.JSONDeserializationTest.testCreatureStatsDeserialization
+      resultStatus: 1
+      duration: 0.0003283
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+    - id: 1009
+      uniqueId: TestS.dll/Tests/JSONDeserializationTest/[TestS][Tests.JSONDeserializationTest.testFocusPointDeserialization]
+      name: testFocusPointDeserialization
+      fullName: Tests.JSONDeserializationTest.testFocusPointDeserialization
+      resultStatus: 1
+      duration: 0.000381
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+    - id: 1007
+      uniqueId: TestS.dll/Tests/JSONDeserializationTest/[TestS][Tests.JSONDeserializationTest.testStatModifierDeserialization]
+      name: testStatModifierDeserialization
+      fullName: Tests.JSONDeserializationTest.testStatModifierDeserialization
+      resultStatus: 1
+      duration: 0.0004911
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
+    m_ResultText: 'testCreatureDeserialization (0.023s)
+
+      ---
+
+      Alt form
+      mod: Pair<STR,Additive: 5 Multiplicative: 1>
+
+      Alt form mod: Pair<ARM,Additive:
+      0 Multiplicative: 1>
+
+      Alt form mod: Pair<SPD,Additive: 0 Multiplicative:
+      1>'
+    m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: cb56c6a885ebcbb5968a09cf03ce1f31ffffff7f
+      scrollPos: {x: 0, y: 35}
+      m_SelectedIDs: 13e223c8
+      m_LastClickedID: -937172461
+      m_ExpandedIDs: cb56c6a885ebcbb5968a09cf6dc2c7cf03ce1f31ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -512,7 +629,7 @@ MonoBehaviour:
     m_TestRunnerUIFilter:
       PassedHidden: 0
       FailedHidden: 0
-      NotRunHidden: 1
+      NotRunHidden: 0
       m_SearchString: 
       selectedCategoryMask: 0
       availableCategories:
@@ -564,10 +681,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -32000
-    y: -31619
-    width: 1160
-    height: 250
+    x: 72
+    y: 472
+    width: 1159
+    height: 251
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -582,20 +699,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/UI Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/UI Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: Z:\Projects\Monster-Collector-Proto
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0390000
-    m_LastClickedID: 14832
-    m_ExpandedIDs: 00000000f0390000f239000000ca9a3b
+    m_SelectedIDs: 143a0000
+    m_LastClickedID: 14868
+    m_ExpandedIDs: 00000000f4390000f639000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -623,7 +740,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f0390000f2390000
+    m_ExpandedIDs: 00000000f4390000f6390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -667,7 +784,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -700,9 +817,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -30839
-    y: -31970
-    width: 310
+    x: 1232
+    y: 122
+    width: 311
     height: 601
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -738,17 +855,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -32000
-    y: -31970
-    width: 219
-    height: 330
+    x: 72
+    y: 122
+    width: 200
+    height: 329
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 423c0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 9af3ffffc0f4ffff40f5ffff20f6ffff08fbffff
+      m_SelectedIDs: 68620000
+      m_LastClickedID: 25192
+      m_ExpandedIDs: e8a8ffff10a9ffff76adffffaeadffff4eaeffffdaaeffff58afffffd6afffff4eb0ffff1cb1ffffa4b1ffff28b2ffff04b3ffff30b3ffff56b3ffff84b3ffffaab3ffffd0b3fffff6b3ffff22b4ffffa4b4ffffd0b4fffffeb4ffffc6b6ffff9eb7ffffc4b7ffff46b8ffff74b8ffff9ab8ffff12b9ffff92b9ffff10baffff1cbeffff9abeffff7abffffff4bfffff9cc0ffff16c1ffffe2c1ffff62c2ffff8ec2ffff08c3ffff82c3ffff4ec4ffffc6c4ffff46c5ffffbec5ffff92c6ffff08c7ffffe8c7ffff60c8ffff2ac9ffffacc9ffff76cafffff4caffff20cbffff9ccbffff1accffff9accffff12cdffff42cdffffbccdffff42ceffff66cfffffe6cfffffbad0ffff3ad1ffff60d1ffffe0d1ffff58d2ffffd0d2ffffb0d3ffff40d4ffff72d4ffff98d4ffffbed4ffff00d5ffff72d5ffff00d6ffff78d6fffff0d6ffff76d7fffffcd7ffff70d8fffff2d8ffff80d9fffff4d9ffff2edaffff64daffff90daffff14dbffffeedbffff6edcffffa4dcffff30ddffffb6ddffff8cdeffff12dfffff92dfffffc0dffffff0dfffff16e0ffff50e0ffff76e0ffff9ce0ffff20e1ffff78e2ffff9ce2ffff88e3ffff16e4ffff8ce4ffff0ee5ffff36e5ffff64e5ffffdae5ffff60e6ffffa2e6ffff98e7ffffb4e7fffffae7ffffdee9ffff64eaffff96eaffffc0eaffff4eebffffe4ecffff2aedffff26eefffffceeffff7cefffffccf1ffff50f2ffffcef2ffff0cf3ffff6cf5ffff88f5ffff5af6ffff94f6ffff5efbffff626200007c62000080620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -793,10 +910,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -31780
-    y: -31970
-    width: 939
-    height: 330
+    x: 273
+    y: 122
+    width: 957
+    height: 329
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: ac2482be8a602466b8e67f829a2da3d3
@@ -808,9 +925,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -7, y: -2, z: 0}
+    m_Target: {x: 623.7381, y: 291.4214, z: -30.125}
     speed: 2
-    m_Value: {x: -7, y: -2, z: 0}
+    m_Value: {x: 623.7381, y: 291.4214, z: -30.125}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -860,9 +977,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.6133814
+    m_Target: 451.0655
     speed: 2
-    m_Value: 1.6133814
+    m_Value: 451.0655
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -908,10 +1025,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 337
-    y: 81
-    width: 1170
-    height: 602
+    x: 262
+    y: 73
+    width: 1249
+    height: 512
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -921,7 +1038,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1170, y: 581}
+  m_TargetSize: {x: 1249, y: 491}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -936,10 +1053,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -585
-    m_HBaseRangeMax: 585
-    m_VBaseRangeMin: -290.5
-    m_VBaseRangeMax: 290.5
+    m_HBaseRangeMin: -624.5
+    m_HBaseRangeMax: 624.5
+    m_VBaseRangeMin: -245.5
+    m_VBaseRangeMax: 245.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -957,23 +1074,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1170
-      height: 581
+      width: 1249
+      height: 491
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 585, y: 290.5}
+    m_Translation: {x: 624.5, y: 245.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -585
-      y: -290.5
-      width: 1170
-      height: 581
+      x: -624.5
+      y: -245.5
+      width: 1249
+      height: 491
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1170, y: 602}
+  m_LastWindowPixelSize: {x: 1249, y: 512}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1001,7 +1118,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 674
-    width: 1513
-    height: 325
+    y: 606
+    width: 1512
+    height: 393
   m_ViewDataDictionary: {fileID: 0}
