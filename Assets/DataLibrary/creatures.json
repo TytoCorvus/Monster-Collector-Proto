@@ -1,36 +1,51 @@
 [
     {
-        "creatureID":1,
-        "abilityId":1,
+        "creatureId":1,
         "baseStats":[10,10,10,10],
-        "creatureTypes":["Vital"],
-        "availableForms":[{
-            "statMods":{
-                "str":[5, 1],
-                "arm":[0, 1],
-                "spd":[0, 1]
-            },
-            "signature":null,
-            "abilityId":1,
-            "revealAction":{
-
-            }
-        }],
+        "abilityId":1,
         "moves":["Strike", "Slam"],
         "focalPoints":[
             {
-                "tier":"Hazy",
-                "statMods":{},
-                ""
-
+                "description":"Small boost to strength",
+                "statMods":{
+                    "STR":[5, 1]
+                }
             },
             {
-
+                "description":"Small boost to armor",
+                "statMods":{
+                    "ARM":[5, 1]
+                }
             },
             {
-
+                "description":"Additional armor scaling",
+                "statMods":{
+                    "ARM":[0, 1.1]
+                }
+            },
+            {
+                "description":"Small boost to speed",
+                "statMods":{
+                    "SPD":[5, 1]
+                }
+            }
+        ],
+        "baseForm":{
+            "creatureTypes":["Vital"],
+            "abilityId":1
+        },
+        "availableForms":[
+            {
+                "creatureTypes":["Heat"],
+                "statMods":{
+                    "STR":[5, 1],
+                    "ARM":[0, 1],
+                    "SPD":[0, 1]
+                },
+                "moveId":null,
+                "abilityId":1,
+                "revealAction":null
             }
         ]
-    },
-    {}
+    }
 ]

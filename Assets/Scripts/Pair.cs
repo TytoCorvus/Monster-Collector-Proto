@@ -19,8 +19,16 @@ public class Pair<T, K>
         return second;
     }
 
-    public bool equals(Pair<T, K> other)
+    public bool Equals(Pair<T, K> other)
     {
         return other.first.Equals(first) && other.second.Equals(second);
+    }
+
+    public override string ToString()
+    {
+        string firstString = first.ToString();
+        string secondString = second.ToString();
+
+        return "Pair<" + firstString + "," + secondString + ">";
     }
 }

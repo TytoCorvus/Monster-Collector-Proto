@@ -50,17 +50,12 @@ public class Move
 
     public static Move fromJSONObject(JSONObject json)
     {
-        int id;
-        string name;
-        int moveClassId;
+        int id = (int)json.GetField("id").n;
+        string name = json.GetField("name").str;
+        int moveClassId = (int)json.GetField("moveClass").n;
         List<BattleAction> battleActions;
-        int focusChange;
-        int healthChange;
-        json.GetField(out id, "id", -1);
-        json.GetField(out name, "name", "");
-        json.GetField(out moveClassId, "moveClass", -1);
-        json.GetField(out focusChange, "focusChange", int.MinValue);
-        json.GetField(out healthChange, "healthChange", int.MinValue);
+        int focusChange = (int)json.GetField("focusChange").n;
+        int healthChange = (int)json.GetField("healthChange").n;
         battleActions = BattleActionLoader.battleActionListFromJson(json.GetField("actionList"));
 
         return new Move(id, name, (MoveClass)moveClassId, battleActions, focusChange, healthChange);

@@ -53,7 +53,7 @@ public class DamageBattleAction : BattleAction
         double chanceToHit = (double)inputList[3].n;
 
         TargetClass targetClass = (TargetClass)targetClassInt;
-        CreatureType creatureType = CreatureTypeLibrary.creatureTypes[(CreatureTypeLibrary.CreatureTypeName)damageTypeId];
+        CreatureType creatureType = CreatureType.creatureTypes[(CreatureType.Name)damageTypeId];
 
         return new DamageBattleAction(targetClass, basePower, creatureType, chanceToHit);
     }

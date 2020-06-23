@@ -62,7 +62,7 @@ public class BattleCreature : MonoBehaviour
         return knockedOut;
     }
 
-    public List<CreatureType> getCreatureTypes()
+    public HashSet<CreatureType> getCreatureTypes()
     {
         return creature.getCreatureTypes();
     }

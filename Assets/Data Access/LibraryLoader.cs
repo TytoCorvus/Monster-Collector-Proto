@@ -3,30 +3,37 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class LibraryLoader : MonoBehaviour
+public class LibraryLoader
 {
-    private string basePath;
+    private static string basePath;
+    private static bool moveLibraryLoaded = false;
     // Start is called before the first frame update
-    void Start()
-    {
+
+        /*
+    static LibraryLoader() {
         basePath = Application.dataPath + "/DataLibrary/";
-        loadMoveLibrary();
+        loadMoveLibrary();    
     }
+    */
 
-    public void loadMoveLibrary()
+    public static void loadMoveLibrary()
     {
-        string json = readEntireFile("moveLib");
-        JSONObject moveLibraryJson = JSONObject.Create(json);
-        foreach (JSONObject j in moveLibraryJson.list)
+        if (!moveLibraryLoaded)
         {
-            Move m = Move.fromJSONObject(j);
-            MoveLibrary.loadDictionary(m.id, m.name, m);
+            basePath = Application.dataPath + "/DataLibrary/";
 
-            Debug.Log(m.ToString());
-        }
+            string json = readEntireFile("moveLib");
+            JSONObject moveLibraryJson = JSONObject.Create(json);
+            foreach (JSONObject j in moveLibraryJson.list)
+            {
+                Move m = Move.fromJSONObject(j);
+                MoveLibrary.loadDictionary(m.id, m.name, m);
+            }
+            moveLibraryLoaded = true;
+        } 
     }
 
-    private string readEntireFile(string filePath)
+    private static string readEntireFile(string filePath)
     {
         StreamReader streamReader = new StreamReader(basePath + filePath + ".json");
         return streamReader.ReadToEnd();

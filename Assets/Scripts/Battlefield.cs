@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Battlefield : MonoBehaviour
@@ -36,7 +37,8 @@ public class Battlefield : MonoBehaviour
     private Move selectRandomMove(BattleCreature bc)
     {
         int pos = (int)Mathf.Floor(RandomUtils.nextInRange(0, bc.creature.moveset.Count - 1));
-        return bc.creature.moveset[pos];
+
+        return bc.creature.moveset.ToList()[pos];
     }
 
     public List<BattleCreature> getTurnOrder()

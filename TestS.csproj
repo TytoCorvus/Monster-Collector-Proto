@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TestS\CreatureStatTest.cs" />
+    <Compile Include="Assets\TestS\fromJSONTest.cs" />
     <None Include="Assets\TestS\TestS.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>Z:/Programs/Unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -86,7 +86,6 @@
     <Compile Include="Assets\Creature\CreatureForm.cs" />
     <Compile Include="Assets\Creature\CreatureStats.cs" />
     <Compile Include="Assets\Creature\CreatureType.cs" />
-    <Compile Include="Assets\Creature\CreatureTypeLibrary.cs" />
     <Compile Include="Assets\Data Access\BattleActionLoader.cs" />
     <Compile Include="Assets\Data Access\JsonReader.cs" />
     <Compile Include="Assets\Data Access\LibraryLoader.cs" />

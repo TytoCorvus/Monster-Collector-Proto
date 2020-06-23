@@ -13,6 +13,15 @@ public class FocalPoints
         fp = new Dictionary<FocusThreshold, FocusPoint>();
     }
 
+    public FocalPoints(FocusPoint hazy, FocusPoint alert, FocusPoint inTune, FocusPoint sharp)
+    {
+        fp = new Dictionary<FocusThreshold, FocusPoint>();
+        fp.Add(FocusThreshold.HAZY, hazy);
+        fp.Add(FocusThreshold.ALERT, alert);
+        fp.Add(FocusThreshold.IN_TUNE, inTune);
+        fp.Add(FocusThreshold.SHARP, sharp);
+    }
+
     public List<Pair<FocusPoint, double>> getActiveFocusPoints(FocusThreshold currentThreshold)
     {
         List<Pair<FocusPoint, double>> result = new List<Pair<FocusPoint, double>>();
@@ -76,4 +85,33 @@ public class FocalPoints
         return statMods;
     }
 
+    public bool Equals(FocalPoints other)
+    {
+        bool isEqual = true;
+        isEqual &= fp[FocusThreshold.HAZY].Equals(other.fp[FocusThreshold.HAZY]);
+        isEqual &= fp[FocusThreshold.ALERT].Equals(other.fp[FocusThreshold.ALERT]);
+        isEqual &= fp[FocusThreshold.IN_TUNE].Equals(other.fp[FocusThreshold.IN_TUNE]);
+        isEqual &= fp[FocusThreshold.SHARP].Equals(other.fp[FocusThreshold.SHARP]);
+        return isEqual;
+    }
+
+    public static FocalPoints fromJSONObject(JSONObject json)
+    {
+        if(json.type != JSONObject.Type.ARRAY)
+        {
+            throw new System.Exception("FocalPoints deserialization failed: json is not array");
+        }
+        if(json.list.Count != 4)
+        {
+            throw new System.Exception("FocalPoints deserialization failed: item count is not 4");
+        }
+
+        List<FocusPoint> points = new List<FocusPoint>();
+        foreach(JSONObject j in json.list)
+        {
+            points.Add(FocusPoint.fromJSONObject(j));
+        }
+
+        return new FocalPoints(points[0], points[1], points[2], points[3]);
+    }
 }

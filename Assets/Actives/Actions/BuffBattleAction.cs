@@ -7,13 +7,13 @@ public class BuffBattleAction : BattleAction
     private List<StatName> statsArray;
     private double buffValue;
     private bool isAdditive;
-    private CreatureTypeLibrary.CreatureTypeName creatureType;
+    private CreatureType.Name creatureType;
     private double chanceToHit;
 
 
 
     public BuffBattleAction(TargetClass targetClass, List<StatName> statsArray, double buffValue,
-                            bool isAdditive, CreatureTypeLibrary.CreatureTypeName creatureType, double chanceToHit) : base(targetClass)
+                            bool isAdditive, CreatureType.Name creatureType, double chanceToHit) : base(targetClass)
     {
         this.statsArray = statsArray;
         this.buffValue = buffValue;

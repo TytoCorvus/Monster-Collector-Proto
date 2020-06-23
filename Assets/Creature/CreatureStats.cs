@@ -50,8 +50,23 @@ public class CreatureStats
         }
     }
 
+    public bool Equals(CreatureStats other)
+    {
+        return hp == other.hp && str == other.str && arm == other.arm && spd == other.spd;
+    }
+
+    public override string ToString()
+    {
+        return "hp: " + hp + " str: " + str + " arm: " + arm + " spd: " + spd;
+    }
+
     public CreatureStats getStatsWithMods(List<Pair<StatName, StatModifier>> statMods)
     {
+        if(statMods == null || statMods.Count <= 0)
+        {
+            return new CreatureStats(this);
+        }
+
         StatModifier hpMod = StatModifier.NEUTRAL_MOD;
         StatModifier strMod = StatModifier.NEUTRAL_MOD;
         StatModifier armMod = StatModifier.NEUTRAL_MOD;
@@ -79,5 +94,11 @@ public class CreatureStats
         }
 
         return new CreatureStats(hpMod.applyToBase(hp), strMod.applyToBase(str), armMod.applyToBase(arm), spdMod.applyToBase(spd));
+    }
+
+    public static CreatureStats fromJSONObject(JSONObject json)
+    {
+        List<JSONObject> list = json.list;
+        return new CreatureStats((int)list[0].n, (int)list[1].n, (int)list[2].n, (int)list[3].n);
     }
 }
