@@ -81,6 +81,7 @@
     <Compile Include="Assets\BattleCreatureHUD.cs" />
     <Compile Include="Assets\BattleCreatureSprite.cs" />
     <Compile Include="Assets\BattleMenuUI.cs" />
+    <Compile Include="Assets\BattleMoveAnimation.cs" />
     <Compile Include="Assets\BattleUIManager.cs" />
     <Compile Include="Assets\Creature\BattleCreature.cs" />
     <Compile Include="Assets\Creature\Creature.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\JSON\JSONObject.cs" />
     <Compile Include="Assets\JSON\JSONTemplates.cs" />
     <Compile Include="Assets\JSON\VectorTemplates.cs" />
+    <Compile Include="Assets\MoveAnimation.cs" />
     <Compile Include="Assets\Scripts\BattleEvent.cs" />
     <Compile Include="Assets\Scripts\Battlefield.cs" />
     <Compile Include="Assets\Scripts\DamageUtils.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Assets\Scripts\TargetClass.cs" />
     <Compile Include="Assets\Stats\StatModifier.cs" />
     <Compile Include="Assets\Stats\StatName.cs" />
+    <Compile Include="Assets\TurnManager.cs" />
     <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\Monster-Collector-Proto.asmdef" />
     <Reference Include="UnityEngine">

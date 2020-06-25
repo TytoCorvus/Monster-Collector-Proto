@@ -15,7 +15,7 @@
                 ]
             }
         ],
-        "type": "Vital",
+        "type": "Nature",
         "focusChange": 0,
         "healthChange": 0
     },
@@ -35,7 +35,7 @@
                 ]
             }
         ],
-        "type": "Vital",
+        "type": "Sky",
         "focusChange": -20,
         "healthChange": 0
     },
@@ -55,8 +55,28 @@
                 ]
             }
         ],
-        "type": "Heat",
+        "type": "Frost",
         "focusChange": 0,
+        "healthChange": 0
+    },
+    {
+        "id": 3,
+        "name": "Waste Away",
+        "description": "Decays a target for massive damage",
+        "moveClass": "attack",
+        "actionList": [
+            {
+                "actionId": 0,
+                "inputs": [
+                    0,
+                    110,
+                    0,
+                    1
+                ]
+            }
+        ],
+        "type": "Alpha",
+        "focusChange": -60,
         "healthChange": 0
     }
 ]

@@ -16,32 +16,32 @@ public class BattleMenuUI : MonoBehaviour
         availableMoves.Add(MoveLibrary.get("Strike"));
         availableMoves.Add(MoveLibrary.get("Flare"));
         availableMoves.Add(MoveLibrary.get("Slam"));
+        availableMoves.Add(MoveLibrary.get("Waste Away"));
         display();
     }
 
     public void display()
     {
+        Debug.Log("Displaying");
         int numMoves = availableMoves.Count;
-        if(numMoves < moveButtons.Count)
-        {
-            for(int i = 0; i < moveButtons.Count; i++)
-            {
-                if(i > numMoves - 1)
-                    moveButtons[i].SetActive(false);
-                else
-                {
-                    moveButtons[i].SetActive(true);
-                    Image image = moveButtons[i].GetComponent(typeof(Image)) as Image;
-                    Text buttonText = moveButtons[i].transform.GetChild(0).GetComponent(typeof(Text)) as Text;
 
-                    buttonText.text = availableMoves[i].name;
-                    string colorString = availableMoves[i].creatureType.color;
-                    int r = hexToRGB(colorString.Substring(0, 2));
-                    int g = hexToRGB(colorString.Substring(2, 2));
-                    int b = hexToRGB(colorString.Substring(4, 2));
-                    image.color = new Color32((byte)r, (byte)g, (byte)b, (byte)255);
-                } 
-            }
+        for(int i = 0; i < moveButtons.Count; i++)
+        {
+            if(i > numMoves - 1)
+                moveButtons[i].SetActive(false);
+            else
+            {
+                moveButtons[i].SetActive(true);
+                Image image = moveButtons[i].GetComponent(typeof(Image)) as Image;
+                Text buttonText = moveButtons[i].transform.GetChild(0).GetComponent(typeof(Text)) as Text;
+
+                buttonText.text = availableMoves[i].name;
+                string colorString = availableMoves[i].creatureType.color;
+                int r = hexToRGB(colorString.Substring(0, 2));
+                int g = hexToRGB(colorString.Substring(2, 2));
+                int b = hexToRGB(colorString.Substring(4, 2));
+                image.color = new Color32((byte)r, (byte)g, (byte)b, (byte)255);
+            } 
         }
     }
 

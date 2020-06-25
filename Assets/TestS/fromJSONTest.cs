@@ -103,7 +103,7 @@ namespace Tests
             CreatureForm expectedBaseForm = new CreatureForm(expectedTypesBase,null,null);
 
             HashSet<CreatureType> expectedTypesForm = new HashSet<CreatureType>();
-            expectedTypesForm.Add(CreatureType.HEAT);
+            expectedTypesForm.Add(CreatureType.FLAME);
 
             List<Pair<StatName, StatModifier>> expectedFormMods = new List<Pair<StatName, StatModifier>>();
             expectedFormMods.Add(new Pair<StatName, StatModifier>(StatName.STR, sm1));
