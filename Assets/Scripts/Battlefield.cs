@@ -10,7 +10,6 @@ public class Battlefield : MonoBehaviour
     public BattleUIManager battleUIManager;
     public List<BattleCreature> playerCreatures;
     private List<BattleCreature> enemyCreatures;
-   
 
     public List<Pair<BattleCreature, Move>> getMoveRequests()
     {

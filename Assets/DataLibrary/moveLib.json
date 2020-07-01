@@ -16,6 +16,7 @@
             }
         ],
         "type": "Nature",
+        "priority":0,
         "focusChange": 0,
         "healthChange": 0
     },
@@ -36,6 +37,7 @@
             }
         ],
         "type": "Sky",
+        "priority":0,
         "focusChange": -20,
         "healthChange": 0
     },
@@ -56,6 +58,7 @@
             }
         ],
         "type": "Frost",
+        "priority":0,
         "focusChange": 0,
         "healthChange": 0
     },
@@ -76,6 +79,7 @@
             }
         ],
         "type": "Alpha",
+        "priority":0,
         "focusChange": -60,
         "healthChange": 0
     }

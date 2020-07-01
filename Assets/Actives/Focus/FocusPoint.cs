@@ -1,7 +1,5 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEngine;
 
 public class FocusPoint
 {
@@ -39,8 +37,12 @@ public class FocusPoint
 
 
 
-    public bool Equals(FocusPoint other)
+    public override bool Equals(Object obj)
     {
+        if (!(obj is FocusPoint))
+            return false;
+        FocusPoint other = (FocusPoint)obj;
+
         bool isEqual = true;
         isEqual &= statModifiers.Count == other.statModifiers.Count;
 

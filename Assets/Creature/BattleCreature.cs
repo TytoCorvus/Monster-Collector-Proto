@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleCreature : MonoBehaviour
+public class BattleCreature
 {
     //TODO make a UI for BattleCreatures
     private BattleCreatureHUD hud;
@@ -12,40 +12,22 @@ public class BattleCreature : MonoBehaviour
     public readonly List<Status> status = new List<Status>();
     private bool knockedOut = false;
 
+    public BattleCreature(Creature creature, Owner owner)
+    {
+        this.creature = creature;
+        this.owner = owner;
+    }
 
-
-    private int maxHP { get => maxHP; set => maxHP = value; }
-
+    public int maxHP { get => maxHP; set => maxHP = value; }
     public int currentHP
     {
         get { return currentHP; }
         set { currentHP = value; }
     }
 
-    public void applyCreature(Creature creature, Owner owner)
+    public void changeHealth(int changeVal)
     {
-        this.creature = creature;
-        this.owner = owner;
-        maxHP = creature.getStats().getStat(StatName.HP);
-        currentHP = maxHP;
-    }
-
-    public void applyStatus(Status status)
-    {
-
-    }
-
-    private int getHP()
-    {
-        return currentHP;
-    }
-
-    public void changeHealth(int amount)
-    {
-        int newAmount = currentHP + amount;
-        int maxHP = creature.getStats().getStat(StatName.HP);
-        currentHP = bound(newAmount, 0, maxHP);
-        if (currentHP == 0) knockedOut = true;
+        currentHP = bound(currentHP + changeVal , 0, maxHP);
     }
 
     public int bound(int newVal, int floor, int ceiling)
@@ -55,11 +37,17 @@ public class BattleCreature : MonoBehaviour
         if (newVal < floor) { finalVal = floor; }
         if (finalVal > ceiling) { finalVal = ceiling; }
         return finalVal;
-    }
+    } 
 
     public bool isKnockedOut()
     {
         return knockedOut;
+    }
+
+    public bool isInteractable()
+    {
+        //TODO add checks for dodge and whatnot
+        return !isKnockedOut();
     }
 
     public HashSet<CreatureType> getCreatureTypes()
@@ -71,5 +59,29 @@ public class BattleCreature : MonoBehaviour
     {
         List<Pair<StatName, StatModifier>> focusMods = focus.getCurrentStatChanges();
         return creature.getStats().getStatsWithMods(focusMods);
+    }
+
+    public override bool Equals(object obj)
+    {
+        //TODO complete this for status
+
+        if(!(obj is BattleCreature))
+        {
+            return false;
+        }
+
+        BattleCreature other = (BattleCreature)obj;
+        bool isEqual = true;
+
+        isEqual &= creature.Equals(other.creature);
+        isEqual &= focus.Equals(other.focus);
+        isEqual &= knockedOut == other.knockedOut;
+        isEqual &= ((status == null || status.Count == 0) && (other.status == null || other.status.Count == 0)) || status.Count == other.status.Count;
+        foreach(Status s in status)
+        {
+            isEqual &= other.status.Contains(s);
+        }
+
+        return isEqual;
     }
 }

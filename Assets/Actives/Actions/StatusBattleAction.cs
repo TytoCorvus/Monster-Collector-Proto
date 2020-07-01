@@ -17,10 +17,10 @@ public class StatusBattleAction : BattleAction
         this.chanceToHit = chanceToHit;
     }
 
-    public override int execute(BattleActionContext actionContext)
+    public override BattleActionResult execute(BattleActionContext actionContext)
     {
         //TODO properly implement status conditions
-        return 0;
+        return null;
     }
 
     public static BattleAction fromJSONObject(JSONObject json)

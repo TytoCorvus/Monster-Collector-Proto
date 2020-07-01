@@ -23,10 +23,10 @@ public class BuffBattleAction : BattleAction
     }
 
 
-    public override int execute(BattleActionContext actionContext)
+    public override BattleActionResult execute(BattleActionContext actionContext)
     {
         //TODO properly 
-        return 0;
+        return null;
     }
 
     public static BattleAction fromJSONObject(JSONObject json)

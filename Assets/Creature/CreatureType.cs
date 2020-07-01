@@ -38,7 +38,7 @@ public class CreatureType
         HashSet<Name> empty = new HashSet<Name>();
 
         VITAL   = new CreatureType(0, "Vital", "7e8f7c", 
-                new HashSet<Name>(new Name[] {Name.ELDER}), 
+                new HashSet<Name>(new Name[] {Name.FROST, Name.ELDER}), 
                 new HashSet<Name>(new Name[] {}),
                 empty);
         EARTH   = new CreatureType(1, "Earth", "a1771f", 
@@ -51,7 +51,7 @@ public class CreatureType
 				empty);
         FROST   = new CreatureType(3, "Frost", "b2eff7", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.AQUA, Name.NATURE, Name.SKY, Name.METAL}), 
-				new HashSet<Name>(new Name[] {Name.FROST, Name.NATURE}),
+				new HashSet<Name>(new Name[] {Name.NATURE}),
                 empty);
         AQUA    = new CreatureType(4, "Aqua", "23a4a6", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.FLAME, Name.METAL}), 
@@ -67,10 +67,10 @@ public class CreatureType
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.VENOM}));
         VENOM   = new CreatureType(7, "Venom", "4d187a", 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.NATURE, Name.ELDER, Name.ALPHA}), 
-				new HashSet<Name>(new Name[] {Name.AQUA, Name.NATURE, Name.VENOM, Name.ELDER, Name.ALPHA}),
+				new HashSet<Name>(new Name[] {Name.NATURE, Name.VENOM, Name.ALPHA}),
                 empty);
-        SKY     = new CreatureType(8, "Sky", "72dbed", 
-				empty, 
+        SKY     = new CreatureType(8, "Sky", "72dbed",
+                new HashSet<Name>(new Name[] {Name.VITAL }), 
 				new HashSet<Name>(new Name[] {Name.NATURE, Name.ELDER}), 
 				new HashSet<Name>(new Name[] {Name.EARTH}));
         STORM   = new CreatureType(9, "Storm", "e7f03c", 
@@ -83,7 +83,7 @@ public class CreatureType
 				new HashSet<Name>(new Name[] {Name.VENOM}));
         ELDER   = new CreatureType(11, "Elder", "1c4aed", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.FLAME, Name.FROST, Name.AQUA, Name.STORM}), 
-				new HashSet<Name>(new Name[] {Name.VITAL, Name.NATURE, Name.SPECTRE, Name.VENOM, Name.ALPHA}),
+				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.VENOM, Name.ALPHA}),
                 empty);
         ALPHA   = new CreatureType(12, "Alpha", "e88205", 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.ELDER, Name.ALPHA}), 

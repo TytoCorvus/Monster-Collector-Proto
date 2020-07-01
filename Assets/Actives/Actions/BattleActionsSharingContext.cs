@@ -10,13 +10,14 @@ public class BattleActionsSharingContext : BattleAction
         this.battleActions = battleActions;
     }
 
-    public override int execute(BattleActionContext battleActionContext)
+    public override BattleActionResult execute(BattleActionContext battleActionContext)
     {
+        //TODO fix return statement(If composite battle actions are even required)
         foreach (BattleAction ba in battleActions)
         {
-            if (ba.execute(battleActionContext) != 0) { return 1; }
+            if (ba.execute(battleActionContext) != null) { return null; }
         }
-        return 0;
+        return null;
     }
 
     public override bool canExecute(BattleActionContext battleActionContext)

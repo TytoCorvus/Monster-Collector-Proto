@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class FocalPoints
 {
@@ -85,8 +83,12 @@ public class FocalPoints
         return statMods;
     }
 
-    public bool Equals(FocalPoints other)
+    public override bool Equals(Object obj)
     {
+        if (!(obj is FocalPoints))
+            return false;
+        FocalPoints other = (FocalPoints)obj;
+
         bool isEqual = true;
         isEqual &= fp[FocusThreshold.HAZY].Equals(other.fp[FocusThreshold.HAZY]);
         isEqual &= fp[FocusThreshold.ALERT].Equals(other.fp[FocusThreshold.ALERT]);

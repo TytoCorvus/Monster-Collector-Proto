@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TestS\CreatureStatTest.cs" />
+    <Compile Include="Assets\TestS\TurnManagementTest.cs" />
     <Compile Include="Assets\TestS\fromJSONTest.cs" />
     <None Include="Assets\TestS\TestS.asmdef" />
     <Reference Include="UnityEngine">

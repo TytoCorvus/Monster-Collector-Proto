@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class BattleAction
 {
@@ -19,19 +18,23 @@ public class BattleAction
         this.message = message;
     }
 
-    //
-    public virtual int execute(BattleActionContext actionContext)
+    public virtual BattleActionResult execute(BattleActionContext actionContext)
     {
-        return 0;
+        return new BattleActionResult(true, false);
     }
 
     public virtual bool canExecute(BattleActionContext actionContext)
     {
-        return true;
+        return actionContext.source != null && !actionContext.source.isKnockedOut();
     }
 
     public virtual bool hasMessage()
     {
         return message == null ? false : true;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
     }
 }

@@ -73,4 +73,17 @@ public class Focus
     {
         return focalPoints.getFocusStatChanges(currentThreshold);
     }
+
+    public override bool Equals(object obj)
+    {
+        if (!(obj is Focus))
+            return false;
+
+        Focus other = (Focus)obj;
+        bool isEqual = true;
+
+
+
+        return base.Equals(obj);
+    }
 }

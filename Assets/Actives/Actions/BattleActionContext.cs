@@ -6,6 +6,7 @@ public class BattleActionContext
 {
     public BattleCreature source;
     public List<BattleCreature> targets;
+    public readonly BattleAction action;
     public double damageAmp;
     public bool sameTypeBonus;
     public double alteredChanceToHit;

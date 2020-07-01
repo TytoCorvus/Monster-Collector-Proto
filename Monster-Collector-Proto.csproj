@@ -64,11 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Actives\Abilities\Ability.cs" />
+    <Compile Include="Assets\Actives\Actions\ActionResponse.cs" />
     <Compile Include="Assets\Actives\Actions\BattleAction.cs" />
     <Compile Include="Assets\Actives\Actions\BattleActionContext.cs" />
+    <Compile Include="Assets\Actives\Actions\BattleActionResult.cs" />
     <Compile Include="Assets\Actives\Actions\BattleActionsSharingContext.cs" />
     <Compile Include="Assets\Actives\Actions\BuffBattleAction.cs" />
     <Compile Include="Assets\Actives\Actions\DamageBattleAction.cs" />
+    <Compile Include="Assets\Actives\Actions\DamageBattleActionResult.cs" />
     <Compile Include="Assets\Actives\Actions\StatusBattleAction.cs" />
     <Compile Include="Assets\Actives\Focus\FocalPoints.cs" />
     <Compile Include="Assets\Actives\Focus\Focus.cs" />
@@ -76,7 +79,9 @@
     <Compile Include="Assets\Actives\Focus\FocusThreshold.cs" />
     <Compile Include="Assets\Actives\Focus\FocusTrigger.cs" />
     <Compile Include="Assets\Actives\Moves\Move.cs" />
+    <Compile Include="Assets\Actives\Moves\MoveContext.cs" />
     <Compile Include="Assets\Actives\Moves\MoveLibrary.cs" />
+    <Compile Include="Assets\Actives\Moves\MovePriority.cs" />
     <Compile Include="Assets\Actives\Status\Status.cs" />
     <Compile Include="Assets\BattleCreatureHUD.cs" />
     <Compile Include="Assets\BattleCreatureSprite.cs" />
@@ -96,17 +101,26 @@
     <Compile Include="Assets\JSON\JSONTemplates.cs" />
     <Compile Include="Assets\JSON\VectorTemplates.cs" />
     <Compile Include="Assets\MoveAnimation.cs" />
+    <Compile Include="Assets\Scripts\BattleActionResolver.cs" />
+    <Compile Include="Assets\Scripts\BattleActionType.cs" />
+    <Compile Include="Assets\Scripts\BattleActionWatcher.cs" />
     <Compile Include="Assets\Scripts\BattleEvent.cs" />
     <Compile Include="Assets\Scripts\Battlefield.cs" />
+    <Compile Include="Assets\Scripts\BattlefieldContext.cs" />
     <Compile Include="Assets\Scripts\DamageUtils.cs" />
     <Compile Include="Assets\Scripts\Effect.cs" />
+    <Compile Include="Assets\Scripts\IBattleActionListener.cs" />
+    <Compile Include="Assets\Scripts\ICompareTo.cs" />
+    <Compile Include="Assets\Scripts\ITurnPhaseListener.cs" />
     <Compile Include="Assets\Scripts\Owner.cs" />
     <Compile Include="Assets\Scripts\Pair.cs" />
     <Compile Include="Assets\Scripts\RandomUtils.cs" />
     <Compile Include="Assets\Scripts\TargetClass.cs" />
+    <Compile Include="Assets\Scripts\TurnManager.cs" />
+    <Compile Include="Assets\Scripts\TurnPhase.cs" />
+    <Compile Include="Assets\Scripts\TurnPhaseWatcher.cs" />
     <Compile Include="Assets\Stats\StatModifier.cs" />
     <Compile Include="Assets\Stats\StatName.cs" />
-    <Compile Include="Assets\TurnManager.cs" />
     <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\Monster-Collector-Proto.asmdef" />
     <Reference Include="UnityEngine">
