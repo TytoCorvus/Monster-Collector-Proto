@@ -1,28 +1,65 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class Focus
+public class Focus : ITurnPhaseListener
 {
     public const int MAX_FOCUS = 100;
 
     private FocusThreshold currentThreshold;
     private FocalPoints focalPoints;
     private int currentFocus;
+    private int focusPerUpdate;
+    private bool endTurnFocus;
+    private readonly Watchers watcher;
 
     public Focus()
     {
         this.currentFocus = 30;
+        this.focusPerUpdate = 10;
+        this.endTurnFocus = false;
+        updateCurrentThreshold();
     }
 
-    public Focus(FocalPoints focalPoints)
+    public Focus(FocalPoints focalPoints, Watchers watcher)
     {
         this.currentFocus = 30;
+        this.focusPerUpdate = 10;
+        endTurnFocus = false;
+        updateCurrentThreshold();
         this.focalPoints = focalPoints;
+        subscribe(watcher.turnPhaseWatcher);
+    }
+
+    public void subscribe(TurnPhaseWatcher watcher)
+    {
+        watcher.listen(this, TurnPhase.END);
+    }
+
+    public void unsubscribe()
+    {
+        watcher.turnPhaseWatcher.deafen(this, TurnPhase.END);
+    }
+
+    public bool isListeningFor(TurnPhase phase)
+    {
+        return phase == TurnPhase.END;
+    }
+
+    public BattleActionContext respond(TurnPhase phase)
+    {
+        return new BattleActionContext(new ChangeFocusBattleAction(TargetClass.SELF, focusPerUpdate), null, null, 1, 1);
     }
 
     public int getCurrentFocus() { return currentFocus; }
-    public List<BattleAction> alterCurrentFocus(int value, BattleCreature owner)
+    public void setCurrentFocus(int value) { currentFocus = value; updateCurrentThreshold(); }
+
+    public void setEndTurnFocus(bool val)
+    {
+        endTurnFocus = val;
+    }
+    public void alterCurrentFocus(int value)
     {
         List<Pair<FocusPoint, double>> previouslyActive = focalPoints.getActiveFocusPoints(currentThreshold);
 
@@ -32,8 +69,7 @@ public class Focus
 
         List<Pair<FocusPoint, double>> newlyActive = focalPoints.getActiveFocusPoints(currentThreshold);
 
-        if (previouslyActive.Count == newlyActive.Count) { return null; }
-        else if (previouslyActive.Count > newlyActive.Count)
+        if (previouslyActive.Count > newlyActive.Count)
         {
             //Deactivate all of the FocusPoints that are no longer active
             //TODO make this not dependent on the order returned from FocalPoints
@@ -43,9 +79,6 @@ public class Focus
             //Activate all of the FocusPoints that are newly active
             //TODO make this not dependent on the order returned from FocalPoints
         }
-
-        //TODO make this return actual BattleActions to occur (Not required for stat-boosting focus effects)
-        return new List<BattleAction>();
     }
 
     public FocusThreshold getCurrentThreshold() { return currentThreshold; }

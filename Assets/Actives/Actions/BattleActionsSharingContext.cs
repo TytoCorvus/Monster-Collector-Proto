@@ -10,12 +10,11 @@ public class BattleActionsSharingContext : BattleAction
         this.battleActions = battleActions;
     }
 
-    public override BattleActionResult execute(BattleActionContext battleActionContext)
+    public override BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
-        //TODO fix return statement(If composite battle actions are even required)
         foreach (BattleAction ba in battleActions)
         {
-            if (ba.execute(battleActionContext) != null) { return null; }
+            if (ba.execute(source, targets, amp, hitChanceMultiplier, alteredChanceForSecondary) != null) { return null; }
         }
         return null;
     }

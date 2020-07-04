@@ -16,23 +16,23 @@ public class DamageBattleAction : BattleAction
         this.chanceToHit = chanceToHit;
     }
 
-    public override BattleActionResult execute(BattleActionContext actionContext)
+    public override BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
         bool interactableTargets = false;
         int damageDealt = 0;
         List<BattleCreature> hit = new List<BattleCreature>();
 
-        foreach (BattleCreature target in actionContext.targets)
+        foreach (BattleCreature target in targets)
         {
             if (target.isInteractable())
             {
                 interactableTargets = true;
-                if (RandomUtils.checkOdds(chanceToHit * (1 + actionContext.alteredChanceToHit)))
+                if (RandomUtils.checkOdds(chanceToHit * (1 + hitChanceMultiplier)))
                 {
                     double typeMultiplier = damageType.getDamageMultiplierVs(target.creature.getCreatureTypes());
 
                     int damage = DamageUtils.calculateDamage(basePower * typeMultiplier,
-                                                                    actionContext.source.creature.getStats(),
+                                                                    source.creature.getStats(),
                                                                     target.creature.getStats());
                     damageDealt += damage;
                     target.changeHealth(damage);
@@ -41,7 +41,7 @@ public class DamageBattleAction : BattleAction
             }
         }
 
-        return new DamageBattleActionResult(interactableTargets, actionContext.targets.Count > 0, damageDealt, damageType, actionContext.source, actionContext.targets, hit);
+        return new DamageBattleActionResult(interactableTargets, targets.Count > 0, damageDealt, damageType, source, targets, hit);
     }
 
     public override string ToString()

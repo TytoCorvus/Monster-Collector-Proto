@@ -18,9 +18,9 @@ public class BattleAction
         this.message = message;
     }
 
-    public virtual BattleActionResult execute(BattleActionContext actionContext)
+    public virtual BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
-        return new BattleActionResult(true, false);
+        return null;
     }
 
     public virtual bool canExecute(BattleActionContext actionContext)

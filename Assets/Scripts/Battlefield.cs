@@ -1,15 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
 public class Battlefield : MonoBehaviour
 {
     public int playerSize = 1;
     public int enemySize = 1;
     public BattleUIManager battleUIManager;
+
+    private Watchers watchers;
+    private BattlefieldPositionManager positionManager;
+
     public List<BattleCreature> playerCreatures;
     private List<BattleCreature> enemyCreatures;
+
+    public void Start()
+    {
+        this.watchers = new Watchers();
+    }
 
     public List<Pair<BattleCreature, Move>> getMoveRequests()
     {
@@ -17,7 +23,8 @@ public class Battlefield : MonoBehaviour
         List<Pair<BattleCreature, Move>> moveRequests = new List<Pair<BattleCreature, Move>>();
         foreach (BattleCreature bc in enemyCreatures)
         {
-            moveRequests.Add(new Pair<BattleCreature, Move>(bc, selectRandomMove(bc)));
+            //TODO fix move selection
+            //moveRequests.Add(new Pair<BattleCreature, Move>(bc, selectRandomMove(bc)));
         }
 
         moveRequests.AddRange(getPlayerCreatureMoveRequests());
@@ -33,13 +40,6 @@ public class Battlefield : MonoBehaviour
         return moveReqs;
     }
 
-    private Move selectRandomMove(BattleCreature bc)
-    {
-        int pos = (int)Mathf.Floor(RandomUtils.nextInRange(0, bc.creature.moveset.Count - 1));
-
-        return bc.creature.moveset.ToList()[pos];
-    }
-
     public List<BattleCreature> getTurnOrder()
     {
         //TODO Make this work as intended, based off of speed
@@ -49,9 +49,9 @@ public class Battlefield : MonoBehaviour
         return order;
     }
 
-    private List<Pair<BattleAction, BattleActionContext>> getActionContexts(Move move, BattleCreature source)
+    private List<BattleActionContext> getActionContexts(Move move, BattleCreature source)
     {
-        List<Pair<BattleAction, BattleActionContext>> result = new List<Pair<BattleAction, BattleActionContext>>();
+        List<BattleActionContext> result = new List<BattleActionContext>();
 
         List<BattleCreature> otherCreatures = source.owner == Owner.PLAYER || source.owner == Owner.ALLY ? enemyCreatures : playerCreatures;
         List<BattleCreature> friendlyCreatures = source.owner == Owner.PLAYER_ENEMY || source.owner == Owner.COMPUTER ? playerCreatures : enemyCreatures;
@@ -86,16 +86,16 @@ public class Battlefield : MonoBehaviour
                     break;
             }
 
-            result.Add(new Pair<BattleAction, BattleActionContext>(ba, buildContextForCreature(source, targets)));
+            result.Add(buildContextForCreature(ba, source, targets));
         }
 
         return result;
     }
 
-    private BattleActionContext buildContextForCreature(BattleCreature source, List<BattleCreature> targets)
+    private BattleActionContext buildContextForCreature(BattleAction action, BattleCreature source, List<BattleCreature> targets)
     {
         //TODO alter the specific context for things like focus or creature buffs
-        return new BattleActionContext(source, targets, 1, false, 1, 1);
+        return new BattleActionContext(action, source, targets, 1, 1);
     }
 
     public bool isBattleOver()

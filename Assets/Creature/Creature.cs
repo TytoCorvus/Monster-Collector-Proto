@@ -42,18 +42,21 @@ public class Creature
         bool isEqual = true;
 
         isEqual &= creatureId == other.creatureId;
-        isEqual &= moveset.SetEquals(other.moveset);
-        isEqual &= focalPoints.Equals(other.focalPoints);
-        isEqual &= baseStats.Equals(other.baseStats);
-        isEqual &= baseForm.Equals(other.baseForm);
-        isEqual &= currentForm.Equals(other.baseForm);
-        isEqual &= availableForms.Count == other.availableForms.Count;
+        isEqual &= (moveset == null && other.moveset == null) || moveset.SetEquals(other.moveset);
+        isEqual &= (focalPoints == null && other.focalPoints == null) || focalPoints.Equals(other.focalPoints);
+        isEqual &= (baseStats == null && other.baseStats == null) || baseStats.Equals(other.baseStats);
+        isEqual &= (baseForm == null && other.baseForm == null) || baseForm.Equals(other.baseForm);
+        isEqual &= (currentForm == null && other.currentForm == null) || currentForm.Equals(other.baseForm);
+        isEqual &= (availableForms == null && other.availableForms == null) || availableForms.Count == other.availableForms.Count;
 
-        foreach (CreatureForm cf in availableForms)
+        if(!(availableForms == null && other.availableForms == null))
         {
-            isEqual &= other.availableForms.Contains(cf);
+            foreach (CreatureForm cf in availableForms)
+            {
+                isEqual &= other.availableForms.Contains(cf);
+            }
         }
-
+        
         return isEqual;
     }
 

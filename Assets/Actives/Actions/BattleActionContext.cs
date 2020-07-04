@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class BattleActionContext
 {
+    public readonly BattleAction action;
     public BattleCreature source;
     public List<BattleCreature> targets;
-    public readonly BattleAction action;
-    public double damageAmp;
-    public bool sameTypeBonus;
-    public double alteredChanceToHit;
+    public double amp;
+    public double hitChanceMultiplier;
     public double alteredChanceForSecondary;
-    public BattleActionContext(BattleCreature source, List<BattleCreature> targets, double damageAmp, bool sameTypeBonus,
-                                double alteredChanceToHit, double alteredChanceForSecondary)
+    public BattleActionContext(BattleAction action, BattleCreature source, List<BattleCreature> targets, double amp,
+                                double hitChanceMultiplier)
     {
+        this.action = action;
         this.source = source;
         this.targets = targets;
-        this.damageAmp = damageAmp;
-        this.sameTypeBonus = sameTypeBonus;
-        this.alteredChanceToHit = alteredChanceToHit;
-        this.alteredChanceForSecondary = alteredChanceForSecondary;
+        this.amp = amp;
+        this.hitChanceMultiplier = hitChanceMultiplier;
+    }
+
+    public bool canExecute()
+    {
+        return hasTargets();
     }
 
     public bool hasTargets()
     {
         return targets.Count > 0;
+    }
+
+    public virtual BattleActionResult execute()
+    {
+        return null;
     }
 }

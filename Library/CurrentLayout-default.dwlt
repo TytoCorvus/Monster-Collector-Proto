@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 111
-    y: 159
+    x: 246
+    y: 216
     width: 1472
     height: 672
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 832
+    x: 1042
     y: 0
-    width: 640
+    width: 430
     height: 622
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -73,10 +73,10 @@ MonoBehaviour:
     y: 30
     width: 1472
     height: 622
-  m_MinSize: {x: 678, y: 342}
-  m_MaxSize: {x: 12003, y: 8042}
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 6597
+  controlID: 99
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,10 +94,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 200
-    height: 349
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 234
+    height: 351
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -119,18 +119,18 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 349
-    width: 832
-    height: 273
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+    y: 351
+    width: 1042
+    height: 271
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 16}
   - {fileID: 14}
   - {fileID: 21}
   m_Selected: 2
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,12 +217,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 832
+    width: 1042
     height: 622
-  m_MinSize: {x: 402, y: 342}
-  m_MaxSize: {x: 8002, y: 8042}
+  m_MinSize: {x: 403, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 104
+  controlID: 100
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -242,12 +242,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 832
-    height: 349
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+    width: 1042
+    height: 351
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 105
+  controlID: 101
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -263,10 +263,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 200
+    x: 234
     y: 0
-    width: 632
-    height: 349
+    width: 808
+    height: 351
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -4084
+  m_LastSelectedObjectID: 14638
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,22 +389,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 604
-    width: 1559
-    height: 395
+    x: 306
+    y: 519
+    width: 1041
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
-    ID: 3475
+    ID: 1087
     splitterInitialOffset: 298
     currentActiveSplitter: -1
-    realSizes: e400000061000000
+    realSizes: 7e00000036000000
     relativeSizes:
     - 0.70153844
     - 0.29846156
     minSizes: 2000000020000000
     maxSizes: 0000000000000000
-    lastTotalSize: 325
+    lastTotalSize: 180
     splitSize: 6
     xOffset: 0
   m_TestTypeToolbarIndex: 1
@@ -467,7 +467,7 @@ MonoBehaviour:
       name: Monster Collector Prototype
       fullName: Monster Collector Prototype
       resultStatus: 1
-      duration: 0.1748857
+      duration: 0.082799
       messages: 
       output: 
       stacktrace: 
@@ -483,7 +483,7 @@ MonoBehaviour:
       name: TestS.dll
       fullName: Z:/Projects/Monster-Collector-Proto/Library/ScriptAssemblies/TestS.dll
       resultStatus: 1
-      duration: 0.1254426
+      duration: 0.0392408
       messages: 
       output: 
       stacktrace: 
@@ -499,7 +499,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 0.1172168
+      duration: 0.0366356
       messages: 
       output: 
       stacktrace: 
@@ -686,24 +686,63 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1005
       parentUniqueId: TestS.dll/Tests/[TestS][Tests.JSONDeserializationTest][suite]
-    m_ResultText: 'testCreatureDeserialization (0.023s)
-
-      ---
-
-      Alt form
-      mod: Pair<STR,Additive: 5 Multiplicative: 1>
-
-      Alt form mod: Pair<ARM,Additive:
-      0 Multiplicative: 1>
-
-      Alt form mod: Pair<SPD,Additive: 0 Multiplicative:
-      1>'
+    - id: 1005
+      uniqueId: TestS.dll/Tests/[TestS][Tests.TurnManagementTest][suite]
+      name: TurnManagementTest
+      fullName: Tests.TurnManagementTest
+      resultStatus: 1
+      duration: 0.0335621
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1014
+      parentUniqueId: TestS.dll/[TestS][Tests][suite]
+    - id: 1006
+      uniqueId: TestS.dll/Tests/TurnManagementTest/[TestS][Tests.TurnManagementTest.testMovePriorityComparison]
+      name: testMovePriorityComparison
+      fullName: Tests.TurnManagementTest.testMovePriorityComparison
+      resultStatus: 1
+      duration: 0.0126077
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.TurnManagementTest][suite]
+    - id: 1007
+      uniqueId: TestS.dll/Tests/TurnManagementTest/[TestS][Tests.TurnManagementTest.testTurnManagerGetListOfHighestPrio]
+      name: testTurnManagerGetListOfHighestPrio
+      fullName: Tests.TurnManagementTest.testTurnManagerGetListOfHighestPrio
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: TestS.dll/Tests/[TestS][Tests.TurnManagementTest][suite]
+    m_ResultText: TurnManagementTest (0.034s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 13e223c8
-      m_LastClickedID: -937172461
-      m_ExpandedIDs: cb56c6a885ebcbb5968a09cf6dc2c7cf03ce1f31ffffff7f
+      m_SelectedIDs: 90deaa93
+      m_LastClickedID: -1817518448
+      m_ExpandedIDs: 90deaa93cb56c6a885ebcbb5968a09cfffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -776,10 +815,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 245
-    y: 684
-    width: 831
-    height: 252
+    x: 0
+    y: 607
+    width: 1358
+    height: 392
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -804,10 +843,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 56}
-    m_SelectedIDs: 723a0000
-    m_LastClickedID: 14962
-    m_ExpandedIDs: 00000000563a0000583a00006e3a000000ca9a3b
+    scrollPos: {x: 0, y: 32}
+    m_SelectedIDs: 9a3a0000
+    m_LastClickedID: 15002
+    m_ExpandedIDs: 000000007e3a0000803a0000863a0000903a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -835,7 +874,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000563a0000583a0000
+    m_ExpandedIDs: 000000007e3a0000803a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -860,8 +899,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0cf0ffff
-    m_LastClickedInstanceID: -4084
+    m_SelectedInstanceIDs: 183b0000
+    m_LastClickedInstanceID: 15128
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000000000009a3a0000
     m_RenameOverlay:
@@ -912,9 +951,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 943
-    y: 189
-    width: 639
+    x: 1288
+    y: 246
+    width: 429
     height: 601
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -950,31 +989,31 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 111
-    y: 189
-    width: 199
-    height: 328
+    x: 246
+    y: 246
+    width: 233
+    height: 330
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 24baffff5cfbffff5efbffff1a3900002a3900003439000044390000
+      m_ExpandedIDs: 40f1ffff5af1ffff34f2ffffb6f2ffff5efbffff2e390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: StrikeAnimation
-        m_OriginalName: StrikeAnimation
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -4084
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -1005,10 +1044,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 311
-    y: 189
-    width: 630
-    height: 328
+    x: 480
+    y: 246
+    width: 806
+    height: 330
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: ac2482be8a602466b8e67f829a2da3d3
@@ -1020,9 +1059,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 407.005, y: 242.865, z: 0}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 407.005, y: 242.865, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1072,9 +1111,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.8129534
+    m_Target: 482.49695
     speed: 2
-    m_Value: 1.8129534
+    m_Value: 482.49695
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1120,10 +1159,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 261
+    x: 305
     y: 73
-    width: 822
-    height: 510
+    width: 1052
+    height: 513
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -1133,7 +1172,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 822, y: 489}
+  m_TargetSize: {x: 1052, y: 492}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1148,10 +1187,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -411
-    m_HBaseRangeMax: 411
-    m_VBaseRangeMin: -244.5
-    m_VBaseRangeMax: 244.5
+    m_HBaseRangeMin: -526
+    m_HBaseRangeMax: 526
+    m_VBaseRangeMin: -246
+    m_VBaseRangeMax: 246
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1169,23 +1208,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 822
-      height: 489
+      width: 1052
+      height: 492
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 411, y: 244.5}
+    m_Translation: {x: 526, y: 246}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -411
-      y: -244.5
-      width: 822
-      height: 489
+      x: -526
+      y: -246
+      width: 1052
+      height: 492
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 822, y: 510}
+  m_LastWindowPixelSize: {x: 1052, y: 513}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1212,8 +1251,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 111
-    y: 538
-    width: 831
-    height: 252
+    x: 246
+    y: 597
+    width: 1041
+    height: 250
   m_ViewDataDictionary: {fileID: 0}

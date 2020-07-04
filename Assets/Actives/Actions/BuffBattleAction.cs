@@ -23,9 +23,8 @@ public class BuffBattleAction : BattleAction
     }
 
 
-    public override BattleActionResult execute(BattleActionContext actionContext)
+    public override BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
-        //TODO properly 
         return null;
     }
 

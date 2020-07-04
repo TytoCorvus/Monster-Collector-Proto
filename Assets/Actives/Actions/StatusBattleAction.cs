@@ -17,9 +17,9 @@ public class StatusBattleAction : BattleAction
         this.chanceToHit = chanceToHit;
     }
 
-    public override BattleActionResult execute(BattleActionContext actionContext)
+    public override BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
-        //TODO properly implement status conditions
+        //TODO implement Status battle action
         return null;
     }
 

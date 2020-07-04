@@ -8,14 +8,17 @@ public class BattleCreature
     private BattleCreatureHUD hud;
     public Creature creature;
     public Owner owner;
-    public readonly Focus focus = new Focus();
+    public readonly Focus focus;
     public readonly List<Status> status = new List<Status>();
     private bool knockedOut = false;
+    private bool onBattlefield = false;
 
-    public BattleCreature(Creature creature, Owner owner)
+    public BattleCreature(Creature creature, Owner owner, BattleCreatureHUD hud, Watchers watchers)
     {
         this.creature = creature;
+        this.focus = new Focus(this.creature.focalPoints, watchers);
         this.owner = owner;
+        this.hud = hud;
     }
 
     public int maxHP { get => maxHP; set => maxHP = value; }
@@ -27,7 +30,12 @@ public class BattleCreature
 
     public void changeHealth(int changeVal)
     {
-        currentHP = bound(currentHP + changeVal , 0, maxHP);
+        currentHP = bound(currentHP + changeVal, 0, maxHP);
+    }
+
+    public void changeFocus(int changeVal)
+    {
+        focus.alterCurrentFocus(changeVal);
     }
 
     public int bound(int newVal, int floor, int ceiling)
@@ -37,7 +45,7 @@ public class BattleCreature
         if (newVal < floor) { finalVal = floor; }
         if (finalVal > ceiling) { finalVal = ceiling; }
         return finalVal;
-    } 
+    }
 
     public bool isKnockedOut()
     {
@@ -48,6 +56,19 @@ public class BattleCreature
     {
         //TODO add checks for dodge and whatnot
         return !isKnockedOut();
+    }
+
+    public void enterBattlefield(){
+        focus.setCurrentFocus(0);
+        focus.setEndTurnFocus(true);
+        onBattlefield = true;
+    }
+
+    public void leaveBattlefield()
+    {
+        focus.setCurrentFocus(0);
+        focus.setEndTurnFocus(true);
+        onBattlefield = false;
     }
 
     public HashSet<CreatureType> getCreatureTypes()

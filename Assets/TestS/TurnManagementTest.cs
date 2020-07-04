@@ -38,22 +38,55 @@ namespace Tests
         [Test]
         public void testTurnManagerGetListOfHighestPrio()
         {
+            Watchers testWatchers = new Watchers();
+
             CreatureStats cs1 = new CreatureStats(1, 1, 1, 10);
             CreatureForm bf1 = new CreatureForm(new HashSet<CreatureType>(new CreatureType[] { CreatureType.VITAL }), null, null);
-            Creature c1 = new Creature(0, null, null, null, cs1, bf1, null);
-            BattleCreature bc1 = new BattleCreature(c1, Owner.ALLY);
+            FocusPoint f1 = new FocusPoint(null, null, null, null);
+            FocalPoints fp1 = new FocalPoints(f1, f1, f1, f1);
+            Creature c1 = new Creature(0, null, fp1, null, cs1, bf1, null);
+            BattleCreature bc1 = new BattleCreature(c1, Owner.ALLY, null, testWatchers);
 
             CreatureStats cs2 = new CreatureStats(1, 1, 1, 20);
             CreatureForm bf2 = new CreatureForm(new HashSet<CreatureType>(new CreatureType[] { CreatureType.VITAL }), null, null);
-            Creature c2 = new Creature(0, null, null, null, cs2, bf2, null);
-            BattleCreature bc2 = new BattleCreature(c1, Owner.ALLY);
+            FocusPoint f2 = new FocusPoint(null, null, null, null);
+            FocalPoints fp2 = new FocalPoints(f2, f2, f2, f2);
+            Creature c2 = new Creature(0, null, fp2, null, cs2, bf2, null);
+            BattleCreature bc2 = new BattleCreature(c2, Owner.ALLY, null, testWatchers);
 
             Move move1 = new Move(0, "TestMove1", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, 0, 0, 0);
-            Move move2 = new Move(0, "TestMove2", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, 1, 0, 0);
-            Move move3 = new Move(0, "TestMove2", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, -3, 0, 0);
+            Move move2 = new Move(1, "TestMove2", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, 1, 0, 0);
+            Move move3 = new Move(2, "TestMove3", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, -3, 0, 0);
 
+            MoveContext context1 = new MoveContext(move1, bc1, null, null, null);
+            MoveContext context2 = new MoveContext(move2, bc2, null, null, null);
+            MoveContext context3 = new MoveContext(move3, bc1, null, null, null);
+            MoveContext context4 = new MoveContext(move1, bc2, null, null, null);
 
+            //bc2 moves faster than bc1
+            //Order of prio: move3, move1, move2
+            //Resulting move order should then be: context3, context4, context1, context2
+            HashSet<MoveContext> contexts = new HashSet<MoveContext>(new MoveContext[] {context1, context2, context3, context4});
+            TurnManager turnManager = new TurnManager(null, null);
 
+            Assert.That(turnManager.getMovesRemaining() == 0);
+            turnManager.beginTurn(contexts);
+            MoveContext actual1 = turnManager.getNextMove();
+            MoveContext actual2 = turnManager.getNextMove();
+
+            Assert.That(turnManager.getMovesRemaining() == 2);
+            Assert.That(turnManager.isTurnOver() == false);
+
+            MoveContext actual3 = turnManager.getNextMove();
+            MoveContext actual4 = turnManager.getNextMove();
+
+            Assert.That(turnManager.getMovesRemaining() == 0);
+            Assert.That(turnManager.isTurnOver());
+
+            Assert.That(actual1.Equals(context3));
+            Assert.That(actual2.Equals(context4));
+            Assert.That(actual3.Equals(context1));
+            Assert.That(actual4.Equals(context2));
         }
     }
 }

@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-interface ITurnPhaseListener
+public interface ITurnPhaseListener
 {
-    void isListeningFor(TurnPhase phase);
+    void subscribe(TurnPhaseWatcher watcher);
+    void unsubscribe();
+    bool isListeningFor(TurnPhase phase);
+    BattleActionContext respond(TurnPhase phase);
 }
 

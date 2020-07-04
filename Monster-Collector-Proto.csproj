@@ -65,11 +65,13 @@
   <ItemGroup>
     <Compile Include="Assets\Actives\Abilities\Ability.cs" />
     <Compile Include="Assets\Actives\Actions\ActionResponse.cs" />
+    <Compile Include="Assets\Actives\Actions\ActionWithoutContext.cs" />
     <Compile Include="Assets\Actives\Actions\BattleAction.cs" />
     <Compile Include="Assets\Actives\Actions\BattleActionContext.cs" />
     <Compile Include="Assets\Actives\Actions\BattleActionResult.cs" />
     <Compile Include="Assets\Actives\Actions\BattleActionsSharingContext.cs" />
     <Compile Include="Assets\Actives\Actions\BuffBattleAction.cs" />
+    <Compile Include="Assets\Actives\Actions\ChangeFocusBattleAction.cs" />
     <Compile Include="Assets\Actives\Actions\DamageBattleAction.cs" />
     <Compile Include="Assets\Actives\Actions\DamageBattleActionResult.cs" />
     <Compile Include="Assets\Actives\Actions\StatusBattleAction.cs" />
@@ -107,6 +109,8 @@
     <Compile Include="Assets\Scripts\BattleEvent.cs" />
     <Compile Include="Assets\Scripts\Battlefield.cs" />
     <Compile Include="Assets\Scripts\BattlefieldContext.cs" />
+    <Compile Include="Assets\Scripts\BattlefieldPosition.cs" />
+    <Compile Include="Assets\Scripts\BattlefieldPositionManager.cs" />
     <Compile Include="Assets\Scripts\DamageUtils.cs" />
     <Compile Include="Assets\Scripts\Effect.cs" />
     <Compile Include="Assets\Scripts\IBattleActionListener.cs" />
@@ -119,6 +123,7 @@
     <Compile Include="Assets\Scripts\TurnManager.cs" />
     <Compile Include="Assets\Scripts\TurnPhase.cs" />
     <Compile Include="Assets\Scripts\TurnPhaseWatcher.cs" />
+    <Compile Include="Assets\Scripts\Watchers.cs" />
     <Compile Include="Assets\Stats\StatModifier.cs" />
     <Compile Include="Assets\Stats\StatName.cs" />
     <None Include="Assets\JSON\readme.txt" />

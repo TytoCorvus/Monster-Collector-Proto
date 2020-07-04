@@ -42,7 +42,7 @@ public class Move
     {
         //TODO update battlecreature health management
         //source.changeHealth(healthChange);
-        source.focus.alterCurrentFocus(focusChange, null);
+        source.focus.alterCurrentFocus(focusChange);
     }
 
     public override string ToString()
@@ -53,6 +53,11 @@ public class Move
             sb.Append("\nBattleAction: " + ba.ToString());
         }
         return sb.ToString();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return obj is Move && ((Move)obj).id == id;
     }
 
     public static Move fromJSONObject(JSONObject json)

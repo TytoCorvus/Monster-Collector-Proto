@@ -44,9 +44,13 @@ public class FocusPoint
         FocusPoint other = (FocusPoint)obj;
 
         bool isEqual = true;
-        isEqual &= statModifiers.Count == other.statModifiers.Count;
 
-        isEqual &= (new CreatureStats()).getStatsWithMods(statModifiers).Equals((new CreatureStats()).getStatsWithMods(other.statModifiers));
+        if(!(statModifiers == null && other.statModifiers == null))
+        {
+            isEqual &= statModifiers.Count == other.statModifiers.Count;
+            isEqual &= (new CreatureStats()).getStatsWithMods(statModifiers).Equals((new CreatureStats()).getStatsWithMods(other.statModifiers));
+        }
+        
         isEqual &= (battleAction == null && other.battleAction == null) || battleAction.Equals(other.battleAction);
         isEqual &= (focusTrigger == null && other.focusTrigger == null) || focusTrigger.Equals(other.focusTrigger);
 

@@ -37,12 +37,15 @@ public class MoveContext
 
         isEqual &= move.Equals(other.move);
         isEqual &= source.Equals(other.source);
-        foreach (BattleCreature bc in allies)
-            isEqual &= other.allies.Contains(bc);
-        foreach (BattleCreature bc in enemies)
-            isEqual &= other.enemies.Contains(bc);
-        foreach (BattleCreature bc in targets)
-            isEqual &= other.targets.Contains(bc);
+        if (!(allies == null && other.allies == null))
+            foreach (BattleCreature bc in allies)
+                isEqual &= other.allies.Contains(bc);
+        if (!(enemies == null && other.enemies == null))
+            foreach (BattleCreature bc in enemies)
+                isEqual &= other.enemies.Contains(bc);
+        if (!(targets == null && other.targets == null))
+            foreach (BattleCreature bc in targets)
+                isEqual &= other.targets.Contains(bc);
 
         return base.Equals(obj);
     }

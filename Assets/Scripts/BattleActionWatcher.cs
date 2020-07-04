@@ -34,18 +34,23 @@ public class BattleActionWatcher
         return listeners;
     }
 
-    public List<Pair<BattleAction, BattleActionContext>> buildActionsToResolve(BattleAction action, BattleActionContext battleActionContext, MoveContext moveContext)
+    public List<BattleActionContext> buildActionsToResolve(BattleActionContext battleActionContext, MoveContext moveContext)
     {
         //TODO flesh out action watcher
-        List<Pair<BattleAction, BattleActionContext>> actions = new List<Pair<BattleAction, BattleActionContext>>();
-        actions.Add(new Pair<BattleAction, BattleActionContext>(action, battleActionContext));
+        List<BattleActionContext> actions = new List<BattleActionContext>();
+        actions.Add(battleActionContext);
 
         return actions;
     }
 
-    public Pair<BattleAction, BattleActionContext> getAlteredBattleAction(BattleAction action, BattleActionContext battleActionContext, MoveContext moveContext)
+    public BattleActionContext getAlteredBattleAction(BattleActionContext battleActionContext, MoveContext moveContext)
     {
-        return new Pair<BattleAction, BattleActionContext>(action, battleActionContext);
+        return battleActionContext;
+    }
+
+    public BattleActionContext getAlteredBattleAction(BattleActionContext battleActionContext)
+    {
+        return battleActionContext;
     }
 }
 
