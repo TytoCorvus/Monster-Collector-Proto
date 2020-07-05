@@ -19,6 +19,7 @@ public class Focus : ITurnPhaseListener
         this.currentFocus = 30;
         this.focusPerUpdate = 10;
         this.endTurnFocus = false;
+        this.watcher = null;
         updateCurrentThreshold();
     }
 

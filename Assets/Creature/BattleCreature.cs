@@ -98,9 +98,12 @@ public class BattleCreature
         isEqual &= focus.Equals(other.focus);
         isEqual &= knockedOut == other.knockedOut;
         isEqual &= ((status == null || status.Count == 0) && (other.status == null || other.status.Count == 0)) || status.Count == other.status.Count;
-        foreach(Status s in status)
+        if(status != null)
         {
-            isEqual &= other.status.Contains(s);
+            foreach (Status s in status)
+            {
+                isEqual &= other.status.Contains(s);
+            }
         }
 
         return isEqual;

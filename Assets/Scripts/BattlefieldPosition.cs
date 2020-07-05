@@ -5,27 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class BattlefieldPosition
+public class BattlefieldPosition
 {
+    public readonly int teamNumber;
+    public readonly PositionType positionType;
+    public readonly int positionNumber;
 
-    private BattleCreature occupant;
-
-    public BattleCreature getOccupant()
+    public BattlefieldPosition(int teamNumber, PositionType positionType, int positionNumber)
     {
-        return occupant;
+        this.teamNumber = teamNumber;
+        this.positionType = positionType;
+        this.positionNumber = positionNumber;
     }
 
-    public BattleCreature removeOccupant()
+    public override bool Equals(object obj)
     {
-        BattleCreature oldOccupant = occupant;
-        occupant = null;
-        return oldOccupant;
+        if (!(obj is BattlefieldPosition))
+            return false;
+        BattlefieldPosition other = (BattlefieldPosition)obj;
+
+        return teamNumber == other.teamNumber && positionType == other.positionType && positionNumber == other.positionNumber;
     }
 
-    public void placeOccupant(BattleCreature battleCreature)
+    public enum PositionType
     {
-        if (occupant == null)
-            occupant = battleCreature;
+        PRIMARY = 0,
+        SUPPORT = 1
     }
-
 }

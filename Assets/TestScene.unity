@@ -465,8 +465,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521967313}
-  - component: {fileID: 521967314}
-  - component: {fileID: 521967315}
   m_Layer: 0
   m_Name: Battlefield
   m_TagString: Untagged
@@ -492,35 +490,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &521967314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521967312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22144056154014b5db8aa895d26b2d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSize: 1
-  enemySize: 1
-  battleUIManager: {fileID: 0}
-  playerCreatures:
-  - {fileID: 0}
---- !u!114 &521967315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521967312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c13fe645c2c5a48937f53fdf8b1964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &934471311
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +585,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creatureSprite: {fileID: 934471312}
+--- !u!1 &991375547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991375548}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &991375548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991375547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 631.5, y: 105.17499, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194376803
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,10 +730,13 @@ MonoBehaviour:
     type: 3}
   battleMenuUIPrefab: {fileID: 6421429187045590192, guid: a5a2f754ddeecc345af8aaf71f46aecd,
     type: 3}
+  messageBoxUIPrefab: {fileID: 1885367134090672242, guid: 9a35895dbcf07ad4eb85c10da3364693,
+    type: 3}
   baseCanvas: {fileID: 1194376806}
   allyUI: {fileID: 0}
   enemyUI: {fileID: 0}
   battleMenuUI: {fileID: 0}
+  messageBoxUI: {fileID: 0}
 --- !u!1 &1259866754
 GameObject:
   m_ObjectHideFlags: 0

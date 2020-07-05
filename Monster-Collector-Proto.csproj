@@ -102,12 +102,13 @@
     <Compile Include="Assets\JSON\JSONObject.cs" />
     <Compile Include="Assets\JSON\JSONTemplates.cs" />
     <Compile Include="Assets\JSON\VectorTemplates.cs" />
+    <Compile Include="Assets\MessageBoxScript.cs" />
     <Compile Include="Assets\MoveAnimation.cs" />
     <Compile Include="Assets\Scripts\BattleActionResolver.cs" />
     <Compile Include="Assets\Scripts\BattleActionType.cs" />
     <Compile Include="Assets\Scripts\BattleActionWatcher.cs" />
     <Compile Include="Assets\Scripts\BattleEvent.cs" />
-    <Compile Include="Assets\Scripts\Battlefield.cs" />
+    <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\BattlefieldContext.cs" />
     <Compile Include="Assets\Scripts\BattlefieldPosition.cs" />
     <Compile Include="Assets\Scripts\BattlefieldPositionManager.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\Scripts\Pair.cs" />
     <Compile Include="Assets\Scripts\RandomUtils.cs" />
     <Compile Include="Assets\Scripts\TargetClass.cs" />
+    <Compile Include="Assets\Scripts\Team.cs" />
     <Compile Include="Assets\Scripts\TurnManager.cs" />
     <Compile Include="Assets\Scripts\TurnPhase.cs" />
     <Compile Include="Assets\Scripts\TurnPhaseWatcher.cs" />

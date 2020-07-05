@@ -5,10 +5,12 @@ using UnityEngine;
 public class BattleActionResolver
 {
     private readonly BattleActionWatcher watcher;
+    private readonly BattleUIManager uiManager;
 
-    public BattleActionResolver(BattleActionWatcher watcher)
+    public BattleActionResolver(BattleActionWatcher watcher, BattleUIManager uiManager)
     {
         this.watcher = watcher;
+        this.uiManager = uiManager;
     }
 
     public BattleActionResult resolveAction(BattleActionContext battleActionContext, MoveContext moveContext)
