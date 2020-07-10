@@ -19,6 +19,8 @@ public class BattleUIManager : MonoBehaviour
     public GameObject battleMenuUI;
     public MessageBoxScript messageBoxUI;
 
+    private BattlefieldPositionManager positionManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,11 @@ public class BattleUIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setup(BattlefieldPositionManager positionManager)
+    {
+        this.positionManager = positionManager;
     }
 
     public void generateBattleMenu(BattleCreature battleCreature)

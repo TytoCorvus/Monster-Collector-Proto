@@ -5,7 +5,6 @@ using UnityEngine;
 public class BattleCreature
 {
     //TODO make a UI for BattleCreatures
-    private BattleCreatureHUD hud;
     public Creature creature;
     public Owner owner;
     public readonly Focus focus;
@@ -13,12 +12,11 @@ public class BattleCreature
     private bool knockedOut = false;
     private bool onBattlefield = false;
 
-    public BattleCreature(Creature creature, Owner owner, BattleCreatureHUD hud, Watchers watchers)
+    public BattleCreature(Creature creature, Owner owner, Watchers watchers)
     {
         this.creature = creature;
         this.focus = new Focus(this.creature.focalPoints, watchers);
         this.owner = owner;
-        this.hud = hud;
     }
 
     public int maxHP { get => maxHP; set => maxHP = value; }

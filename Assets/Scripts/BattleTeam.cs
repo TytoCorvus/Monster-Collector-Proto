@@ -1,34 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Team
+public class BattleTeam
 {
-    public static readonly int MAX_SIZE = 5;
-    private List<Creature> creatures;
+    private readonly List<BattleCreature> creatures;
 
-    public Team(List<Creature> creatures)
+    public BattleTeam(Team team, Owner owner, Watchers watchers)
     {
-        if (creatures.Count > MAX_SIZE)
-            throw new System.Exception("Cannot have a team of size " + creatures.Count);
-
-        this.creatures = creatures;
+        this.creatures = team.getCreatures().Select(creature => new BattleCreature(creature, owner, watchers)).ToList();
     }
 
-    public List<Creature> getCreatures()
-    {
-        return creatures;
-    }
-    public Creature getFirst()
+    public BattleCreature getFirst()
     {
         return creatures[0];
     }
 
-    public Creature getSecond()
+    public BattleCreature getSecond()
     {
         return creatures[1];
     }
 
-    public Creature getCreatureInPosition(int pos)
+    public BattleCreature getCreatureInPosition(int pos)
     {
         if (!posExists(pos))
             return null;
@@ -41,8 +37,8 @@ public class Team
         if (!(posExists(pos1) && posExists(pos2)))
             throw new System.Exception("Cannot swap when positions are out of bounds");
 
-        Creature first = creatures[pos1];
-        Creature second = creatures[pos2];
+        BattleCreature first = creatures[pos1];
+        BattleCreature second = creatures[pos2];
         creatures[pos1] = second;
         creatures[pos2] = first;
     }
@@ -51,6 +47,4 @@ public class Team
     {
         return pos >= 0 && pos <= creatures.Count;
     }
-
-
 }
