@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monster-Collector-Proto", "Monster-Collector-Proto.csproj", "{A3E09C9B-A491-3BC2-12C1-74DA80394AA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestS", "TestS.csproj", "{A4FFE527-C721-B0B4-4257-EF4CF3E4B9FF}"

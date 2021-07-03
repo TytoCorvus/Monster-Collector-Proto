@@ -5,11 +5,11 @@ public class MoveContext
 {
     public readonly Move move;
     public readonly BattleCreature source;
-    public readonly List<BattleCreature> allies;
-    public readonly List<BattleCreature> enemies;
-    public readonly List<BattleCreature> targets;
+    public readonly List<BattlefieldPosition> allies;
+    public readonly List<BattlefieldPosition> enemies;
+    public readonly List<BattlefieldPosition> targets;
 
-    public MoveContext(Move move, BattleCreature source, List<BattleCreature> allies, List<BattleCreature> enemies, List<BattleCreature> targets)
+    public MoveContext(Move move, BattleCreature source, List<BattlefieldPosition> allies, List<BattlefieldPosition> enemies, List<BattlefieldPosition> targets)
     {
         this.move = move;
         this.source = source;
@@ -38,13 +38,13 @@ public class MoveContext
         isEqual &= move.Equals(other.move);
         isEqual &= source.Equals(other.source);
         if (!(allies == null && other.allies == null))
-            foreach (BattleCreature bc in allies)
+            foreach (BattlefieldPosition bc in allies)
                 isEqual &= other.allies.Contains(bc);
         if (!(enemies == null && other.enemies == null))
-            foreach (BattleCreature bc in enemies)
+            foreach (BattlefieldPosition bc in enemies)
                 isEqual &= other.enemies.Contains(bc);
         if (!(targets == null && other.targets == null))
-            foreach (BattleCreature bc in targets)
+            foreach (BattlefieldPosition bc in targets)
                 isEqual &= other.targets.Contains(bc);
 
         return base.Equals(obj);

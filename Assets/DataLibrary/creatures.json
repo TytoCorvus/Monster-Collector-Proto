@@ -3,7 +3,7 @@
         "creatureId":1,
         "baseStats":[10,10,10,10],
         "abilityId":1,
-        "moves":["Strike", "Slam"],
+        "moves":["Strike", "Slam", "Flare", "Waste Away"],
         "focalPoints":[
             {
                 "description":"Small boost to strength",
@@ -36,7 +36,7 @@
         },
         "availableForms":[
             {
-                "creatureTypes":["Heat"],
+                "creatureTypes":["Flame"],
                 "statMods":{
                     "STR":[5, 1],
                     "ARM":[0, 1],

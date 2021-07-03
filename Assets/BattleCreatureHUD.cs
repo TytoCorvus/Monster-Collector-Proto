@@ -22,15 +22,21 @@ public class BattleCreatureHUD : MonoBehaviour
         updateFocus(currentFocus);
     }
 
-    public void updateHP(int currentHP)
+    private void updateHP(int currentHP)
     {
         healthSlider.value = (float)currentHP / (float)maxHP;
         healthText.text = currentHP + " / " + maxHP;
     }
 
-    public void updateFocus(int currentFocus)
+    private void updateFocus(int currentFocus)
     {
         focusSlider.value = (float)currentFocus / (float)maxFocus;
         focusText.text = currentFocus + " / " + maxFocus;
+    }
+
+    public void updateTo(BattleCreature battleCreature)
+    {
+        updateHP(battleCreature.currentHP);
+        updateFocus(battleCreature.focus.getCurrentFocus());
     }
 }

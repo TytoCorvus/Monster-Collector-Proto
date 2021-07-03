@@ -27,6 +27,8 @@ public class CreatureType
 
     public readonly string color;
 
+    public readonly string description;
+
     public readonly HashSet<Name> advantage;
 
     public readonly HashSet<Name> resist;
@@ -40,55 +42,68 @@ public class CreatureType
         VITAL   = new CreatureType(0, "Vital", "7e8f7c", 
                 new HashSet<Name>(new Name[] {Name.FROST, Name.ELDER}), 
                 new HashSet<Name>(new Name[] {}),
-                empty);
+                empty,
+                "");
         EARTH   = new CreatureType(1, "Earth", "a1771f", 
 				new HashSet<Name>(new Name[] {Name.FLAME, Name.STORM}), 
 				new HashSet<Name>(new Name[] {Name.FLAME, Name.VENOM, Name.SKY}), 
-				new HashSet<Name>(new Name[] {Name.STORM}));
+				new HashSet<Name>(new Name[] {Name.STORM}),
+                "");
         FLAME   = new CreatureType(2, "Flame", "de3910", 
 				new HashSet<Name>(new Name[] {Name.FROST, Name.NATURE, Name.VENOM, Name.METAL}), 
 				new HashSet<Name>(new Name[] {Name.FLAME, Name.FROST, Name.NATURE, Name.VENOM, Name.STORM}), 
-				empty);
+				empty,
+                "");
         FROST   = new CreatureType(3, "Frost", "b2eff7", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.AQUA, Name.NATURE, Name.SKY, Name.METAL}), 
 				new HashSet<Name>(new Name[] {Name.NATURE}),
-                empty);
+                empty,
+                "");
         AQUA    = new CreatureType(4, "Aqua", "23a4a6", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.FLAME, Name.METAL}), 
 				new HashSet<Name>(new Name[] {Name.FLAME, Name.AQUA, Name.SKY, Name.METAL}),
-                empty);
+                empty,
+                "");
         NATURE  = new CreatureType(5, "Nature", "438f22", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.AQUA, Name.ELDER}), 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.AQUA, Name.NATURE, Name.STORM, Name.ALPHA}),
-                empty);
+                empty,
+                "");
         SPECTRE = new CreatureType(6, "Spectre", "9c1182", 
 				new HashSet<Name>(new Name[] {Name.SPECTRE, Name.ELDER}), 
 				empty, 
-				new HashSet<Name>(new Name[] {Name.VITAL, Name.VENOM}));
+				new HashSet<Name>(new Name[] {Name.VITAL, Name.VENOM}),
+                "");
         VENOM   = new CreatureType(7, "Venom", "4d187a", 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.NATURE, Name.ELDER, Name.ALPHA}), 
 				new HashSet<Name>(new Name[] {Name.NATURE, Name.VENOM, Name.ALPHA}),
-                empty);
+                empty,
+                "");
         SKY     = new CreatureType(8, "Sky", "72dbed",
                 new HashSet<Name>(new Name[] {Name.VITAL }), 
 				new HashSet<Name>(new Name[] {Name.NATURE, Name.ELDER}), 
-				new HashSet<Name>(new Name[] {Name.EARTH}));
+				new HashSet<Name>(new Name[] {Name.EARTH}),
+                "");
         STORM   = new CreatureType(9, "Storm", "e7f03c", 
 				new HashSet<Name>(new Name[] {Name.FROST, Name.AQUA, Name.SKY, Name.METAL}), 
 				new HashSet<Name>(new Name[] {Name.STORM, Name.METAL}),
-                empty);
+                empty,
+                "");
         METAL   = new CreatureType(10, "Metal", "b2b3a4", 
 				new HashSet<Name>(new Name[] {Name.FROST}), 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.SKY, Name.ELDER, Name.METAL}), 
-				new HashSet<Name>(new Name[] {Name.VENOM}));
+				new HashSet<Name>(new Name[] {Name.VENOM}),
+                "");
         ELDER   = new CreatureType(11, "Elder", "1c4aed", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.FLAME, Name.FROST, Name.AQUA, Name.STORM}), 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.VENOM, Name.ALPHA}),
-                empty);
+                empty,
+                "");
         ALPHA   = new CreatureType(12, "Alpha", "e88205", 
 				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.ELDER, Name.ALPHA}), 
 				new HashSet<Name>(new Name[] {Name.NATURE, Name.SPECTRE, Name.ELDER}),
-                empty);
+                empty,
+                "");
 
         creatureTypes.Add(Name.VITAL, VITAL);
         creatureTypes.Add(Name.EARTH, EARTH);
@@ -119,11 +134,12 @@ public class CreatureType
         creatureTypesByName.Add(ALPHA.name, ALPHA);
     }
 
-    private CreatureType(int id, string name, string color, HashSet<Name> adv, HashSet<Name> res, HashSet<Name> imm)
+    private CreatureType(int id, string name, string color, HashSet<Name> adv, HashSet<Name> res, HashSet<Name> imm, string description)
     {
         this.id = id;
         this.name = name;
         this.color = color;
+        this.description = description;
         this.advantage = adv;
         this.resist = res;
         this.immune = imm;

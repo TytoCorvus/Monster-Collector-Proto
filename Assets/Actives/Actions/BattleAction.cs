@@ -20,7 +20,7 @@ public class BattleAction
 
     public virtual BattleActionResult execute(BattleCreature source, List<BattleCreature> targets, double amp, double hitChanceMultiplier, double alteredChanceForSecondary)
     {
-        return null;
+        return BattleActionResult.NO_CHANGES;
     }
 
     public virtual bool canExecute(BattleActionContext actionContext)

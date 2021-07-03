@@ -9,6 +9,11 @@ public class TurnPhaseWatcher
 {
     public readonly List<ITurnPhaseListener> endTurnListeners;
 
+    public TurnPhaseWatcher()
+    {
+        endTurnListeners = new List<ITurnPhaseListener>();
+    }
+
     public void listen(ITurnPhaseListener listener, TurnPhase phase)
     {
         switch (phase)

@@ -47,4 +47,12 @@ public class BattleTeam
     {
         return pos >= 0 && pos <= creatures.Count;
     }
+
+    public bool isTeamFainted()
+    {
+        bool isFainted = false;
+        foreach (BattleCreature creature in creatures)
+            isFainted |= creature.isKnockedOut();
+        return isFainted;
+    }
 }

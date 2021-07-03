@@ -16,7 +16,7 @@ public class BattleActionResolver
     public BattleActionResult resolveAction(BattleActionContext battleActionContext, MoveContext moveContext)
     {
         BattleActionContext alteredAction = watcher.getAlteredBattleAction(battleActionContext, moveContext);
-        BattleActionResult result = null;
+        BattleActionResult result = BattleActionResult.NO_CHANGES;
         if (alteredAction.canExecute())
             result = battleActionContext.execute();
 
@@ -30,6 +30,7 @@ public class BattleActionResolver
         if (alteredAction.canExecute())
             result = battleActionContext.execute();
 
+        uiManager.updateAllUI();
         return result;
     }
 }

@@ -26,6 +26,19 @@ public class LibraryLoader
         } 
     }
 
+    public static List<Creature> loadTestCreatures()
+    {
+        basePath = Application.dataPath + "/DataLibrary/";
+
+        string json = readEntireFile("creatures");
+
+        List<Creature> creatures = new List<Creature>();
+        foreach (JSONObject creature in JSONObject.Create(json).list)
+            creatures.Add(Creature.fromJSONObject(creature));
+
+        return creatures;
+    }
+
     private static string readEntireFile(string filePath)
     {
         StreamReader streamReader = new StreamReader(basePath + filePath + ".json");

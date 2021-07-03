@@ -10,6 +10,8 @@ public class BattleActionResult
     public readonly bool succeeded;
     public readonly bool hadTargets;
 
+    public static readonly BattleActionResult NO_CHANGES = new BattleActionResult(true, true);
+
     public BattleActionResult(bool succeeded, bool hadTargets)
     {
         this.succeeded = succeeded;

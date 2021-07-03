@@ -30,6 +30,11 @@ public class BattlefieldPositionManager
         }
     }
 
+    public Dictionary<BattlefieldPosition, BattleCreature> getPositions()
+    {
+        return positions;
+    }
+
     public bool positionExists(BattlefieldPosition pos)
     {
         if (pos.teamNumber != 1 && pos.teamNumber != 2)

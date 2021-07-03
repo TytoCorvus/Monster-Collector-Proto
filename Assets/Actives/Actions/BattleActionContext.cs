@@ -32,6 +32,6 @@ public class BattleActionContext
 
     public virtual BattleActionResult execute()
     {
-        return null;
+        return action.execute(source, targets, amp, hitChanceMultiplier, alteredChanceForSecondary);
     }
 }

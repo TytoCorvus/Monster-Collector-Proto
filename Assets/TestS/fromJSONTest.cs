@@ -34,7 +34,7 @@ namespace Tests
         public void testCreatureFormDeserialization()
         {
             string form1 = "{"
-           + "\"creatureTypes\":[\"Heat\"],"
+           + "\"creatureTypes\":[\"Flame\"],"
            + "\"statMods\":{"
                 + "\"STR\":[5, 1],"
                 + "\"ARM\":[0, 2],"
@@ -53,7 +53,7 @@ namespace Tests
             expectedMods.Add(new Pair<StatName, StatModifier>(StatName.SPD, new StatModifier(-40, .85)));
 
             HashSet<CreatureType> creatureTypes = new HashSet<CreatureType>();
-            creatureTypes.Add(CreatureType.creatureTypesByName["Heat"]);
+            creatureTypes.Add(CreatureType.creatureTypesByName["Flame"]);
 
             CreatureForm expected = new CreatureForm(creatureTypes, expectedMods, null, null, null);
             CreatureForm actual = CreatureForm.fromJSONObject(JSONObject.Create(form1));
@@ -79,7 +79,7 @@ namespace Tests
         {
             LibraryLoader.loadMoveLibrary();
 
-            string creatureJSONString = "{\"creatureId\":1,\n\"baseStats\":[10,10,10,10],\n\"abilityId\":1,\n\"moves\":[\"Strike\",\"Slam\"],\n\"focalPoints\":[\n{\n\"description\":\"Small boost to strength\",\n\"statMods\":{\n\"STR\":[5,1]\n}\n},\n{\n\"description\":\"Small boost to armor\",\n\"statMods\":{\n\"ARM\":[5, 1]\n}\n},\n{\n\"description\":\"Additional armor scaling\",\n\"statMods\":{\n\"ARM\":[0, 1.1]\n}\n},\n{\n\"description\":\"Small boost to speed\",\n\"statMods\":{\n\"SPD\":[5, 1]\n}\n}\n],\n\"baseForm\":{\n\"creatureTypes\":[\"Vital\"],\n\"abilityId\":1,\n\"revealAction\":null\n},\n\"availableForms\":[\n{\n\"creatureTypes\":[\"Heat\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]\n}";
+            string creatureJSONString = "{\"creatureId\":1,\n\"baseStats\":[10,10,10,10],\n\"abilityId\":1,\n\"moves\":[\"Strike\",\"Slam\"],\n\"focalPoints\":[\n{\n\"description\":\"Small boost to strength\",\n\"statMods\":{\n\"STR\":[5,1]\n}\n},\n{\n\"description\":\"Small boost to armor\",\n\"statMods\":{\n\"ARM\":[5, 1]\n}\n},\n{\n\"description\":\"Additional armor scaling\",\n\"statMods\":{\n\"ARM\":[0, 1.1]\n}\n},\n{\n\"description\":\"Small boost to speed\",\n\"statMods\":{\n\"SPD\":[5, 1]\n}\n}\n],\n\"baseForm\":{\n\"creatureTypes\":[\"Vital\"],\n\"abilityId\":1,\n\"revealAction\":null\n},\n\"availableForms\":[\n{\n\"creatureTypes\":[\"Flame\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]\n}";
             JSONObject creatureJSON = JSONObject.Create(creatureJSONString);
 
             Creature actual = Creature.fromJSONObject(creatureJSON);
@@ -111,7 +111,7 @@ namespace Tests
             expectedFormMods.Add(new Pair<StatName, StatModifier>(StatName.SPD, sm3));
             CreatureForm expectedAltForm = new CreatureForm(expectedTypesForm, expectedFormMods, null, null, null);
 
-            //"availableForms\":[\n{\n\"creatureTypes\":[\"Heat\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]
+            //"availableForms\":[\n{\n\"creatureTypes\":[\"Flame\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]
 
             List<CreatureForm> expectedAvailableForms = new List<CreatureForm>();
             expectedAvailableForms.Add(expectedAltForm);

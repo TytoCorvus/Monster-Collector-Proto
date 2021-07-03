@@ -57,7 +57,13 @@ public class MessageBoxScript : MonoBehaviour, IPointerDownHandler
             StartCoroutine(displayCoroutine());
     }
 
-    public IEnumerator displayCoroutine()
+    public IEnumerator waitUntilQueueEmpty()
+    {
+        while(messageQueue.Count == 0)
+            yield return new WaitForSeconds(0.05f);
+    }
+
+    private IEnumerator displayCoroutine()
     {
         while(messageQueue.Count > 0)
         {
