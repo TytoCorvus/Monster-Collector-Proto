@@ -71,6 +71,46 @@ public class BattlefieldPositionManager
         return false;
     }
 
+    public List<BattleCreature> getActiveCreatures()
+    {
+        List<BattleCreature> creatureList = new List<BattleCreature>();
+        IEnumerator<BattleCreature> enumerator = positions.Values.GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            if(enumerator.Current != null)
+            {
+                creatureList.Add(enumerator.Current);
+            }
+        }
+        return creatureList;
+    }
+
+    public List<BattleCreature> getAllies(BattleCreature bc)
+    {
+        List<BattleCreature> result = new List<BattleCreature>();
+        getActiveCreatures().ForEach(ac =>
+        {
+            if (ac.owner.Equals(bc.owner))
+            {
+                result.Add(ac);
+            }
+        });
+        return result;
+    }
+
+    public List<BattleCreature> getEnemies(BattleCreature bc)
+    {
+        List<BattleCreature> result = new List<BattleCreature>();
+        getActiveCreatures().ForEach(ac =>
+        {
+            if (ac.owner.Equals(bc.owner))
+            {
+                result.Add(ac);
+            }
+        });
+        return result;
+    }
+
     public BattleCreature getOccupant(BattlefieldPosition position)
     {
         return positions[position];

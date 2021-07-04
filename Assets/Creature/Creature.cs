@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Creature
 {
     public int creatureId;
+    public string creatureName;
     public HashSet<Move> moveset;
     public FocalPoints focalPoints;
     public Ability creatureAbility;
@@ -14,9 +15,10 @@ public class Creature
     private List<CreatureForm> availableForms;
     private CreatureForm currentForm;
 
-    public Creature(int creatureId, HashSet<Move> moveset, FocalPoints focalPoints, Ability creatureAbility, CreatureStats baseStats, CreatureForm baseForm, List<CreatureForm> availableForms)
+    public Creature(int creatureId, string creatureName, HashSet<Move> moveset, FocalPoints focalPoints, Ability creatureAbility, CreatureStats baseStats, CreatureForm baseForm, List<CreatureForm> availableForms)
     {
         this.creatureId = creatureId;
+        this.creatureName = creatureName;
         this.moveset = moveset;
         this.focalPoints = focalPoints;
         this.creatureAbility = creatureAbility;
@@ -63,6 +65,7 @@ public class Creature
     public static Creature fromJSONObject(JSONObject json)
     {
         int creatureId = (int)json.GetField("creatureId").n;
+        string creatureName = json.GetField("creatureName").str;
         CreatureStats baseStats = CreatureStats.fromJSONObject(json.GetField("baseStats"));
         //TODO deserialize Abilities 
         Ability ability = null;
@@ -81,7 +84,7 @@ public class Creature
             availableForms.Add(CreatureForm.fromJSONObject(formJSON));
            
         }
-        Creature result = new Creature(creatureId, moves, focalPoints, ability, baseStats, baseForm, availableForms);
+        Creature result = new Creature(creatureId, creatureName, moves, focalPoints, ability, baseStats, baseForm, availableForms);
         return result;
     }
 }

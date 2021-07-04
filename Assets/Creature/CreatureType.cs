@@ -41,7 +41,7 @@ public class CreatureType
 
         VITAL   = new CreatureType(0, "Vital", "7e8f7c", 
                 new HashSet<Name>(new Name[] {Name.FROST, Name.ELDER}), 
-                new HashSet<Name>(new Name[] {}),
+                empty,
                 empty,
                 "");
         EARTH   = new CreatureType(1, "Earth", "a1771f", 
@@ -91,12 +91,12 @@ public class CreatureType
                 "");
         METAL   = new CreatureType(10, "Metal", "b2b3a4", 
 				new HashSet<Name>(new Name[] {Name.FROST}), 
-				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.SKY, Name.ELDER, Name.METAL}), 
+				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.SKY, Name.ELDER, Name.METAL, Name.ALPHA}), 
 				new HashSet<Name>(new Name[] {Name.VENOM}),
                 "");
         ELDER   = new CreatureType(11, "Elder", "1c4aed", 
 				new HashSet<Name>(new Name[] {Name.EARTH, Name.FLAME, Name.FROST, Name.AQUA, Name.STORM}), 
-				new HashSet<Name>(new Name[] {Name.VITAL, Name.SPECTRE, Name.VENOM, Name.ALPHA}),
+				new HashSet<Name>(new Name[] {Name.FLAME, Name.FROST}),
                 empty,
                 "");
         ALPHA   = new CreatureType(12, "Alpha", "e88205", 

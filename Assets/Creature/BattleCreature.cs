@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BattleCreature
@@ -80,6 +81,12 @@ public class BattleCreature
         return creature.getStats().getStatsWithMods(focusMods);
     }
 
+    public List<Move> getMoves()
+    {
+        //TODO use focus and forms in addition to the base moveset to get available moves
+        return creature.moveset.ToList<Move>();
+    }
+
     public override bool Equals(object obj)
     {
         //TODO complete this for status
@@ -106,4 +113,5 @@ public class BattleCreature
 
         return isEqual;
     }
+
 }

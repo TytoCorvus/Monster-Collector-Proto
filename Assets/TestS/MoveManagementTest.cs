@@ -44,19 +44,19 @@ namespace Tests
             CreatureForm bf1 = new CreatureForm(new HashSet<CreatureType>(new CreatureType[] { CreatureType.VITAL }), null, null);
             FocusPoint f1 = new FocusPoint(null, null, null, null);
             FocalPoints fp1 = new FocalPoints(f1, f1, f1, f1);
-            Creature c1 = new Creature(0, null, fp1, null, cs1, bf1, null);
+            Creature c1 = new Creature(0, "", null, fp1, null, cs1, bf1, null);
             BattleCreature bc1 = new BattleCreature(c1, Owner.ALLY, testWatchers);
 
             CreatureStats cs2 = new CreatureStats(1, 1, 1, 20);
             CreatureForm bf2 = new CreatureForm(new HashSet<CreatureType>(new CreatureType[] { CreatureType.VITAL }), null, null);
             FocusPoint f2 = new FocusPoint(null, null, null, null);
             FocalPoints fp2 = new FocalPoints(f2, f2, f2, f2);
-            Creature c2 = new Creature(0, null, fp2, null, cs2, bf2, null);
+            Creature c2 = new Creature(0, "", null, fp2, null, cs2, bf2, null);
             BattleCreature bc2 = new BattleCreature(c2, Owner.ALLY, testWatchers);
 
-            Move move1 = new Move(0, "TestMove1", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, 0, 0, 0);
-            Move move2 = new Move(1, "TestMove2", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, 1, 0, 0);
-            Move move3 = new Move(2, "TestMove3", "", Move.MoveClass.ATTACK, null, CreatureType.VITAL, -3, 0, 0);
+            Move move1 = new Move(0, "TestMove1", "", Move.MoveClass.ATTACK, TargetClass.ENEMY_SINGLE, null, CreatureType.VITAL, 0, 0, 0);
+            Move move2 = new Move(1, "TestMove2", "", Move.MoveClass.ATTACK, TargetClass.ENEMY_SINGLE, null, CreatureType.VITAL, 1, 0, 0);
+            Move move3 = new Move(2, "TestMove3", "", Move.MoveClass.ATTACK, TargetClass.ENEMY_SINGLE, null, CreatureType.VITAL, -3, 0, 0);
 
             MoveContext context1 = new MoveContext(move1, bc1, null, null, null);
             MoveContext context2 = new MoveContext(move2, bc2, null, null, null);

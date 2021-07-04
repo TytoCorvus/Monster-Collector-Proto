@@ -747,8 +747,7 @@ MonoBehaviour:
   messageBoxUIPrefab: {fileID: 1885367134090672242, guid: 9a35895dbcf07ad4eb85c10da3364693,
     type: 3}
   baseCanvas: {fileID: 1194376806}
-  allyUI: {fileID: 0}
-  enemyUI: {fileID: 0}
+  uiState: 0
   battleMenuUI: {fileID: 0}
   messageBoxUI: {fileID: 0}
 --- !u!1 &1259866754

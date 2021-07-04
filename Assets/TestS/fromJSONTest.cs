@@ -79,7 +79,7 @@ namespace Tests
         {
             LibraryLoader.loadMoveLibrary();
 
-            string creatureJSONString = "{\"creatureId\":1,\n\"baseStats\":[10,10,10,10],\n\"abilityId\":1,\n\"moves\":[\"Strike\",\"Slam\"],\n\"focalPoints\":[\n{\n\"description\":\"Small boost to strength\",\n\"statMods\":{\n\"STR\":[5,1]\n}\n},\n{\n\"description\":\"Small boost to armor\",\n\"statMods\":{\n\"ARM\":[5, 1]\n}\n},\n{\n\"description\":\"Additional armor scaling\",\n\"statMods\":{\n\"ARM\":[0, 1.1]\n}\n},\n{\n\"description\":\"Small boost to speed\",\n\"statMods\":{\n\"SPD\":[5, 1]\n}\n}\n],\n\"baseForm\":{\n\"creatureTypes\":[\"Vital\"],\n\"abilityId\":1,\n\"revealAction\":null\n},\n\"availableForms\":[\n{\n\"creatureTypes\":[\"Flame\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]\n}";
+            string creatureJSONString = "{\"creatureId\":1,\n\"creatureName\":\"\",\n\"baseStats\":[10,10,10,10],\n\"abilityId\":1,\n\"moves\":[\"Strike\",\"Slam\"],\n\"focalPoints\":[\n{\n\"description\":\"Small boost to strength\",\n\"statMods\":{\n\"STR\":[5,1]\n}\n},\n{\n\"description\":\"Small boost to armor\",\n\"statMods\":{\n\"ARM\":[5, 1]\n}\n},\n{\n\"description\":\"Additional armor scaling\",\n\"statMods\":{\n\"ARM\":[0, 1.1]\n}\n},\n{\n\"description\":\"Small boost to speed\",\n\"statMods\":{\n\"SPD\":[5, 1]\n}\n}\n],\n\"baseForm\":{\n\"creatureTypes\":[\"Vital\"],\n\"abilityId\":1,\n\"revealAction\":null\n},\n\"availableForms\":[\n{\n\"creatureTypes\":[\"Flame\"],\n\"statMods\":{\n\"STR\":[5, 1],\n\"ARM\":[0, 1],\n\"SPD\":[0, 1]\n},\n\"moveId\":null,\n\"abilityId\":1,\n\"revealAction\":null\n}\n]\n}";
             JSONObject creatureJSON = JSONObject.Create(creatureJSONString);
 
             Creature actual = Creature.fromJSONObject(creatureJSON);
@@ -121,7 +121,7 @@ namespace Tests
                 Debug.Log("Alt form mod: " + pair.ToString());
             }
 
-            Creature expected = new Creature(1, expectedMoves, expectedFocalPoints, expectedAbility, expectedBaseStats, expectedBaseForm, expectedAvailableForms);
+            Creature expected = new Creature(1, "", expectedMoves, expectedFocalPoints, expectedAbility, expectedBaseStats, expectedBaseForm, expectedAvailableForms);
             
             Assert.That(expected.Equals(actual));
         }

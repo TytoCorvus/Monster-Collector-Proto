@@ -1,6 +1,7 @@
 [
     {
-        "creatureId":1,
+        "creatureId": 1,
+        "creatureName": "bird",
         "baseStats":[10,10,10,10],
         "abilityId":1,
         "moves":["Strike", "Slam", "Flare", "Waste Away"],

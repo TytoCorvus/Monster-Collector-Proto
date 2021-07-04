@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,11 +32,15 @@ public class BattleUIManager : MonoBehaviour
         messageBoxUI.clear();
         messageBoxUI.setVisible(false);
 
+
+        //Likely not useful any more
+        /*
         battleMenuUI = Instantiate(battleMenuUIPrefab, baseCanvas.transform);
         battleMenuUI.name = "Battle Menu";
         ((RectTransform)battleMenuUI.transform).anchorMin = new Vector2(0.55f, 0f);
         ((RectTransform)battleMenuUI.transform).anchorMax = new Vector2(1f, 0.4f);
         battleMenuUI.SetActive(false);
+        */
     }
 
     public void updateAllUI()
@@ -104,11 +109,6 @@ public class BattleUIManager : MonoBehaviour
         }
     }
 
-    public void generateBattleMenu(BattleCreature battleCreature)
-    {
-
-    }
-
     public void createTextBox(string message, bool requireInput)
     {
         messageBoxUI.clear();
@@ -127,17 +127,14 @@ public class BattleUIManager : MonoBehaviour
         messageBoxUI.setVisible(false);
     }
 
-    public IEnumerator getMoveSelection(List<Move> moveList, Action<MoveContext> callback)
+    public async Task<T> getSelection<T>(List<SelectButton<T>> buttons, string selectionTitle)
     {
-
-
-        battleMenuUI.SetActive(true);
-        yield return new WaitForSeconds(2);
-        battleMenuUI.SetActive(false);
-        callback(new MoveContext());
-
-
-    } 
+        battleMenuUI = Instantiate(battleMenuUIPrefab, baseCanvas.transform);
+        MenuButtonManager btnMgr = battleMenuUI.GetComponent<MenuButtonManager>();
+        T resultVal = await btnMgr.getResultFromSelection(buttons, selectionTitle);
+        GameObject.DestroyImmediate(battleMenuUI);
+        return resultVal;
+    }
 
     public void updateState(UIState newState)
     {

@@ -13,7 +13,7 @@ class ActionWithoutContext
     {
         this.action = action;
 
-        if(targetClass == TargetClass.ENEMY_SINGLE || targetClass == TargetClass.ALLY)
+        if(targetClass == TargetClass.ENEMY_SINGLE || targetClass == TargetClass.ALLY_SINGLE)
         {
             throw new Exception("Cannot instantiate action without context for Target Class ENEMY_SINGLE or ALLY");
         }
